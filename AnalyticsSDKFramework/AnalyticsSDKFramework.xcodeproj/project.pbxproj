@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		A268067C2324DEE200645FF4 /* AnalyticsSDKFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = A268067A2324DEE200645FF4 /* AnalyticsSDKFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A268068C2324E51900645FF4 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268068B2324E51900645FF4 /* Tracker.swift */; };
+		A268068F2324E57500645FF4 /* TrackerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268068E2324E57500645FF4 /* TrackerEvent.swift */; };
+		A26806912324E5A300645FF4 /* EventPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806902324E5A300645FF4 /* EventPriority.swift */; };
+		A26806942325295B00645FF4 /* TrackerServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806932325295B00645FF4 /* TrackerServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A26806772324DEE200645FF4 /* AnalyticsSDKFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnalyticsSDKFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A268067A2324DEE200645FF4 /* AnalyticsSDKFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyticsSDKFramework.h; sourceTree = "<group>"; };
 		A268067B2324DEE200645FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A268068B2324E51900645FF4 /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
+		A268068E2324E57500645FF4 /* TrackerEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerEvent.swift; sourceTree = "<group>"; };
+		A26806902324E5A300645FF4 /* EventPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPriority.swift; sourceTree = "<group>"; };
+		A26806932325295B00645FF4 /* TrackerServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +54,46 @@
 		A26806792324DEE200645FF4 /* AnalyticsSDKFramework */ = {
 			isa = PBXGroup;
 			children = (
+				A268068A2324E2E700645FF4 /* Core */,
+				A26806872324E25C00645FF4 /* ServiceAggregator */,
 				A268067A2324DEE200645FF4 /* AnalyticsSDKFramework.h */,
 				A268067B2324DEE200645FF4 /* Info.plist */,
+				A268068B2324E51900645FF4 /* Tracker.swift */,
 			);
 			path = AnalyticsSDKFramework;
+			sourceTree = "<group>";
+		};
+		A26806872324E25C00645FF4 /* ServiceAggregator */ = {
+			isa = PBXGroup;
+			children = (
+				A26806922325291300645FF4 /* Protocols */,
+				A268068D2324E51E00645FF4 /* Models */,
+			);
+			path = ServiceAggregator;
+			sourceTree = "<group>";
+		};
+		A268068A2324E2E700645FF4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A268068D2324E51E00645FF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A268068E2324E57500645FF4 /* TrackerEvent.swift */,
+				A26806902324E5A300645FF4 /* EventPriority.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A26806922325291300645FF4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A26806932325295B00645FF4 /* TrackerServiceProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +139,7 @@
 				TargetAttributes = {
 					A26806762324DEE200645FF4 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -131,6 +176,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A268068C2324E51900645FF4 /* Tracker.swift in Sources */,
+				A26806912324E5A300645FF4 /* EventPriority.swift in Sources */,
+				A26806942325295B00645FF4 /* TrackerServiceProtocol.swift in Sources */,
+				A268068F2324E57500645FF4 /* TrackerEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +309,7 @@
 		A26806802324DEE200645FF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 998QCUR89P;
@@ -276,6 +326,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Balraj.AnalyticsSDKFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +335,7 @@
 		A26806812324DEE200645FF4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 998QCUR89P;
