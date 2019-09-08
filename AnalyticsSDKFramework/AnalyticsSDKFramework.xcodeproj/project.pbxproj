@@ -12,6 +12,10 @@
 		A268068F2324E57500645FF4 /* TrackerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268068E2324E57500645FF4 /* TrackerEvent.swift */; };
 		A26806912324E5A300645FF4 /* EventPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806902324E5A300645FF4 /* EventPriority.swift */; };
 		A26806942325295B00645FF4 /* TrackerServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806932325295B00645FF4 /* TrackerServiceProtocol.swift */; };
+		A268069623252A7200645FF4 /* TrackEventServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268069523252A7200645FF4 /* TrackEventServiceProtocols.swift */; };
+		A268069823252ABB00645FF4 /* TrackerUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268069723252ABB00645FF4 /* TrackerUserProfile.swift */; };
+		A268069B23254CBA00645FF4 /* Encode+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268069A23254CBA00645FF4 /* Encode+Dictionary.swift */; };
+		A268069E23254D7F00645FF4 /* TrackerDebugService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268069D23254D7F00645FF4 /* TrackerDebugService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		A268068E2324E57500645FF4 /* TrackerEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerEvent.swift; sourceTree = "<group>"; };
 		A26806902324E5A300645FF4 /* EventPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPriority.swift; sourceTree = "<group>"; };
 		A26806932325295B00645FF4 /* TrackerServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerServiceProtocol.swift; sourceTree = "<group>"; };
+		A268069523252A7200645FF4 /* TrackEventServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackEventServiceProtocols.swift; sourceTree = "<group>"; };
+		A268069723252ABB00645FF4 /* TrackerUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerUserProfile.swift; sourceTree = "<group>"; };
+		A268069A23254CBA00645FF4 /* Encode+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encode+Dictionary.swift"; sourceTree = "<group>"; };
+		A268069D23254D7F00645FF4 /* TrackerDebugService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerDebugService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,7 @@
 		A26806792324DEE200645FF4 /* AnalyticsSDKFramework */ = {
 			isa = PBXGroup;
 			children = (
+				A268069923254CA600645FF4 /* Utilities */,
 				A268068A2324E2E700645FF4 /* Core */,
 				A26806872324E25C00645FF4 /* ServiceAggregator */,
 				A268067A2324DEE200645FF4 /* AnalyticsSDKFramework.h */,
@@ -66,6 +75,7 @@
 		A26806872324E25C00645FF4 /* ServiceAggregator */ = {
 			isa = PBXGroup;
 			children = (
+				A268069C23254D3A00645FF4 /* Services */,
 				A26806922325291300645FF4 /* Protocols */,
 				A268068D2324E51E00645FF4 /* Models */,
 			);
@@ -75,6 +85,8 @@
 		A268068A2324E2E700645FF4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A26806A0232557F200645FF4 /* Queue */,
+				A268069F232557EB00645FF4 /* Buffer */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -84,6 +96,7 @@
 			children = (
 				A268068E2324E57500645FF4 /* TrackerEvent.swift */,
 				A26806902324E5A300645FF4 /* EventPriority.swift */,
+				A268069723252ABB00645FF4 /* TrackerUserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -92,8 +105,39 @@
 			isa = PBXGroup;
 			children = (
 				A26806932325295B00645FF4 /* TrackerServiceProtocol.swift */,
+				A268069523252A7200645FF4 /* TrackEventServiceProtocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A268069923254CA600645FF4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A268069A23254CBA00645FF4 /* Encode+Dictionary.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A268069C23254D3A00645FF4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A268069D23254D7F00645FF4 /* TrackerDebugService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A268069F232557EB00645FF4 /* Buffer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Buffer;
+			sourceTree = "<group>";
+		};
+		A26806A0232557F200645FF4 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Queue;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,7 +220,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A268069E23254D7F00645FF4 /* TrackerDebugService.swift in Sources */,
 				A268068C2324E51900645FF4 /* Tracker.swift in Sources */,
+				A268069823252ABB00645FF4 /* TrackerUserProfile.swift in Sources */,
+				A268069623252A7200645FF4 /* TrackEventServiceProtocols.swift in Sources */,
+				A268069B23254CBA00645FF4 /* Encode+Dictionary.swift in Sources */,
 				A26806912324E5A300645FF4 /* EventPriority.swift in Sources */,
 				A26806942325295B00645FF4 /* TrackerServiceProtocol.swift in Sources */,
 				A268068F2324E57500645FF4 /* TrackerEvent.swift in Sources */,
