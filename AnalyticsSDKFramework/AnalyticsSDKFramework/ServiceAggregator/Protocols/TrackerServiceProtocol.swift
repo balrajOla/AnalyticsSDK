@@ -30,12 +30,6 @@ public protocol TrackerService {
     /// Called when the Tracker has been started using `func startTracking()`. Some services can use this to start a session.
     func start()
     
-    /// Called when the Tracker has been paused using `func pauseTracking()`. Some services can use this to pause a session or flush the information.
-    func pause()
-    
-    /// Called when the Tracker has been resumed using `func resumeTracking()`. Some services can use this to resume a session.
-    func resume()
-    
     /// Called when the Tracker has been stopped using `func stopTracking()`. Some services can use this to end a session.
     func stop()
 }
@@ -46,14 +40,6 @@ public protocol TrackerService {
 public extension TrackerService {
     
     func start() {
-        // Empty implementation to make the implementation optional.
-    }
-    
-    func pause() {
-        // Empty implementation to make the implementation optional.
-    }
-    
-    func resume() {
         // Empty implementation to make the implementation optional.
     }
     

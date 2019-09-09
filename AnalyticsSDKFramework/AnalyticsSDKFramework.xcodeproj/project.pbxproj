@@ -16,6 +16,7 @@
 		A268069823252ABB00645FF4 /* TrackerUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268069723252ABB00645FF4 /* TrackerUserProfile.swift */; };
 		A268069B23254CBA00645FF4 /* Encode+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268069A23254CBA00645FF4 /* Encode+Dictionary.swift */; };
 		A268069E23254D7F00645FF4 /* TrackerDebugService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268069D23254D7F00645FF4 /* TrackerDebugService.swift */; };
+		A26806A22326881D00645FF4 /* DispatchQueue+Once.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806A12326881D00645FF4 /* DispatchQueue+Once.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A268069723252ABB00645FF4 /* TrackerUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerUserProfile.swift; sourceTree = "<group>"; };
 		A268069A23254CBA00645FF4 /* Encode+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encode+Dictionary.swift"; sourceTree = "<group>"; };
 		A268069D23254D7F00645FF4 /* TrackerDebugService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerDebugService.swift; sourceTree = "<group>"; };
+		A26806A12326881D00645FF4 /* DispatchQueue+Once.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Once.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				A268069A23254CBA00645FF4 /* Encode+Dictionary.swift */,
+				A26806A12326881D00645FF4 /* DispatchQueue+Once.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				A268069823252ABB00645FF4 /* TrackerUserProfile.swift in Sources */,
 				A268069623252A7200645FF4 /* TrackEventServiceProtocols.swift in Sources */,
 				A268069B23254CBA00645FF4 /* Encode+Dictionary.swift in Sources */,
+				A26806A22326881D00645FF4 /* DispatchQueue+Once.swift in Sources */,
 				A26806912324E5A300645FF4 /* EventPriority.swift in Sources */,
 				A26806942325295B00645FF4 /* TrackerServiceProtocol.swift in Sources */,
 				A268068F2324E57500645FF4 /* TrackerEvent.swift in Sources */,
