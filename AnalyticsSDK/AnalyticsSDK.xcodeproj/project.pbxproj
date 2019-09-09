@@ -15,6 +15,7 @@
 		A26806662324DEB700645FF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26806642324DEB700645FF4 /* LaunchScreen.storyboard */; };
 		A26806842324E18400645FF4 /* AnalyticsSDKFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26806832324E18400645FF4 /* AnalyticsSDKFramework.framework */; };
 		A26806852324E18400645FF4 /* AnalyticsSDKFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A26806832324E18400645FF4 /* AnalyticsSDKFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A26806AD2326CD2500645FF4 /* AnalyticsTrackerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806AC2326CD2500645FF4 /* AnalyticsTrackerConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,7 @@
 		A26806652324DEB700645FF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A26806672324DEB700645FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A26806832324E18400645FF4 /* AnalyticsSDKFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AnalyticsSDKFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A26806AC2326CD2500645FF4 /* AnalyticsTrackerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTrackerConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		A26806A92326C49400645FF4 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				A26806AC2326CD2500645FF4 /* AnalyticsTrackerConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				A268065E2324DEB600645FF4 /* ViewController.swift in Sources */,
 				A268065A2324DEB600645FF4 /* AppDelegate.swift in Sources */,
 				A268065C2324DEB600645FF4 /* SceneDelegate.swift in Sources */,
+				A26806AD2326CD2500645FF4 /* AnalyticsTrackerConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

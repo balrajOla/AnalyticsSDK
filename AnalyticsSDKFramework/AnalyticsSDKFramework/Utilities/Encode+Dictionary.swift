@@ -14,3 +14,8 @@ extension Encodable {
         return (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)).flatMap { $0 as? [String: Any] }
     }
 }
+
+public struct Single: Codable {
+    static public let value = Single()
+    private init() {}
+}
