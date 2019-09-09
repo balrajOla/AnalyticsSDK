@@ -17,6 +17,9 @@
 		A268069B23254CBA00645FF4 /* Encode+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268069A23254CBA00645FF4 /* Encode+Dictionary.swift */; };
 		A268069E23254D7F00645FF4 /* TrackerDebugService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268069D23254D7F00645FF4 /* TrackerDebugService.swift */; };
 		A26806A22326881D00645FF4 /* DispatchQueue+Once.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806A12326881D00645FF4 /* DispatchQueue+Once.swift */; };
+		A26806A423269F6200645FF4 /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806A323269F6200645FF4 /* Buffer.swift */; };
+		A26806A623269F6C00645FF4 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806A523269F6C00645FF4 /* Queue.swift */; };
+		A26806A823269F8300645FF4 /* NoonAcademyAnalyticsCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806A723269F8300645FF4 /* NoonAcademyAnalyticsCore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		A268069A23254CBA00645FF4 /* Encode+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encode+Dictionary.swift"; sourceTree = "<group>"; };
 		A268069D23254D7F00645FF4 /* TrackerDebugService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerDebugService.swift; sourceTree = "<group>"; };
 		A26806A12326881D00645FF4 /* DispatchQueue+Once.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Once.swift"; sourceTree = "<group>"; };
+		A26806A323269F6200645FF4 /* Buffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buffer.swift; sourceTree = "<group>"; };
+		A26806A523269F6C00645FF4 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		A26806A723269F8300645FF4 /* NoonAcademyAnalyticsCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoonAcademyAnalyticsCore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,7 @@
 			children = (
 				A26806A0232557F200645FF4 /* Queue */,
 				A268069F232557EB00645FF4 /* Buffer */,
+				A26806A723269F8300645FF4 /* NoonAcademyAnalyticsCore.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -132,6 +139,7 @@
 		A268069F232557EB00645FF4 /* Buffer */ = {
 			isa = PBXGroup;
 			children = (
+				A26806A323269F6200645FF4 /* Buffer.swift */,
 			);
 			path = Buffer;
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 		A26806A0232557F200645FF4 /* Queue */ = {
 			isa = PBXGroup;
 			children = (
+				A26806A523269F6C00645FF4 /* Queue.swift */,
 			);
 			path = Queue;
 			sourceTree = "<group>";
@@ -226,9 +235,12 @@
 				A268069E23254D7F00645FF4 /* TrackerDebugService.swift in Sources */,
 				A268068C2324E51900645FF4 /* Tracker.swift in Sources */,
 				A268069823252ABB00645FF4 /* TrackerUserProfile.swift in Sources */,
+				A26806A623269F6C00645FF4 /* Queue.swift in Sources */,
+				A26806A423269F6200645FF4 /* Buffer.swift in Sources */,
 				A268069623252A7200645FF4 /* TrackEventServiceProtocols.swift in Sources */,
 				A268069B23254CBA00645FF4 /* Encode+Dictionary.swift in Sources */,
 				A26806A22326881D00645FF4 /* DispatchQueue+Once.swift in Sources */,
+				A26806A823269F8300645FF4 /* NoonAcademyAnalyticsCore.swift in Sources */,
 				A26806912324E5A300645FF4 /* EventPriority.swift in Sources */,
 				A26806942325295B00645FF4 /* TrackerServiceProtocol.swift in Sources */,
 				A268068F2324E57500645FF4 /* TrackerEvent.swift in Sources */,
