@@ -14,52 +14,48 @@ import UIKit
 public struct Tracker {
     
     //MARK: - Shared instances
-    public static let sharedInsatance = Tracker()
+    fileprivate (set) public static var sharedInsatance = Tracker()
     
     //MARK: - Private variables
     
     /// All the analytics services supported by the Tracker. See `func configure(with services: [TrackerService])` to configure the services.
-    fileprivate (set) public var services: [TrackerService] = [TrackerDebugService()]
+    private let services: [TrackerService]
     
     /// This creates a UUID that postfix any event that needs to be tracked onces
     fileprivate (set) var onceEventsUUID: String = UUID().uuidString
     
+    //MARK: - Constructor
+    private init(withServices services: [TrackerService] = [TrackerDebugService()]) {
+        self.services = services
+    }
+    
     // MARK: - Configuration
     
-    /// Configures the Tracker with the given analytics services. This method calls  "func start()".
+    /// Configures the Tracker with the given analytics services. This method calls  "func start()" internally.
     ///
     /// - Parameter services: An array of one or more class that implement the `TrackerService` protocol.
-    public mutating func configure(with services: [TrackerService]) {
-        self.services = services
+    public static func configure(with services: [TrackerService]) {
+        Tracker.sharedInsatance = Tracker(withServices: services)
         
-        self.start()
+        Tracker.start()
     }
     
     // MARK: - Session state
     
     /// Call this method to notify all services that the tracking should be started. The best place to call this method is in `func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?)`.
-    public mutating func start() {
-        if self.services.count == 0 {
-            fatalError("Tracker: No services configured, continueing without services. Be sure to call `configureWithServices:` before startTracking is called.")
-        }
-        self.services.forEach { (service) in
+    public static func start() {
+       Tracker.sharedInsatance.services.forEach { (service) in
             service.start()
         }
     }
     
     /// Call this method to notify all service that tracking should end. The best place to call this method is in `func applicationWillTerminate(_ application: UIApplication)`.
-    public mutating func end() {
-        self.endTracking(nil)
-    }
-    
-    /// This method is used for automatic state updating with NSNotifications. See the configure method.
-    fileprivate mutating func endTracking(_ notification: Notification?) {
-        self.onceEventsUUID = UUID().uuidString
-        self.services.forEach { (service) in
+    public static func end() {
+        Tracker.sharedInsatance.onceEventsUUID = UUID().uuidString
+        Tracker.sharedInsatance.services.forEach { (service) in
             service.stop()
         }
     }
-    
 }
 
 //MARK: - Tracking of events
@@ -73,7 +69,7 @@ extension Tracker {
     /// Call this method to send an event to selected services that support the `TrackerEventAnalytics` protocol.
     ///
     /// - Parameter event: An TrackerEvent to send.
-    func track<T>(withServices services: [String])
+    public func track<T>(withServices services: [String])
         -> (_ event: TrackerEvent<T>)
         -> (_ payload: T?)
         -> Void {

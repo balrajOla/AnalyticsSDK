@@ -75,6 +75,7 @@
 		A26806582324DEB600645FF4 /* AnalyticsSDK */ = {
 			isa = PBXGroup;
 			children = (
+				A26806A92326C49400645FF4 /* Constants */,
 				A26806592324DEB600645FF4 /* AppDelegate.swift */,
 				A268065B2324DEB600645FF4 /* SceneDelegate.swift */,
 				A268065D2324DEB600645FF4 /* ViewController.swift */,
@@ -92,6 +93,13 @@
 				A26806832324E18400645FF4 /* AnalyticsSDKFramework.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A26806A92326C49400645FF4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

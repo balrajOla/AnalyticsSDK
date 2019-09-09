@@ -17,11 +17,16 @@ public struct TrackerDebugLogEntry {
     }
 }
 
+public struct TrackerDebugServiceConstant {
+    public static let serviceName = "DEBUGTRACKER"
+    public static let versionString = "1.0"
+}
+
 open class TrackerDebugService: NSObject, TrackerService, TrackerEventAnalytics, TrackerTimedEventAnalytics, TrackerPushNotificationAnalytics, TrackerUserProfileAnalytics, TrackerEventSuperPropertiesAnalytics {
     
-    public var serviceName = "DEBUGTRACKER"
+    public let serviceName = TrackerDebugServiceConstant.serviceName
     
-    public var versionString = "1.0"
+    public let versionString = TrackerDebugServiceConstant.versionString
     
     //MARK: - Logging
     
