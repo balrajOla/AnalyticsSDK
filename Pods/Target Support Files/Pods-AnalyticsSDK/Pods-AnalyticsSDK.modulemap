@@ -1,0 +1,6 @@
+module Pods_AnalyticsSDK {
+  umbrella header "Pods-AnalyticsSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

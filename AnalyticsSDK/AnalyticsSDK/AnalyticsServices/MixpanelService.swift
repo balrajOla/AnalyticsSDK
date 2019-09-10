@@ -26,17 +26,14 @@ struct MixpanelService: TrackerService {
     var serviceName = "Mixpanel"
     
     var versionString: String {
-        return self.mixpanelTracker?.libVersion() ?? "1.0"
+        return "1.0"
     }
-    
-    var mixpanelTracker: Mixpanel!
     
     /// Creates the analytice service with the given Mixpanel token.
     ///
     /// - Parameter apiKey: The token for mixpanel.
     init(token: String) {
-        super.init()
-        self.mixpanelTracker = Mixpanel.sharedInstance(withToken: token)
+        Mixpanel.initialize(token: "")
     }
     
 }
@@ -45,7 +42,8 @@ struct MixpanelService: TrackerService {
 extension MixpanelService: TrackerEventAnalytics {
     
     func trackEvent(_ event: String, withProperties properties: [String : Any]?) {
-        self.mixpanelTracker.track(event, properties: properties)
+        let properties = properties as? Properties
+        Mixpanel.mainInstance().track(event: event, properties: properties)
     }
     
 }
@@ -54,7 +52,7 @@ extension MixpanelService: TrackerEventAnalytics {
 extension MixpanelService: TrackerTimedEventAnalytics {
     
     func startTimingEvent(_ event: String) {
-        self.mixpanelTracker.timeEvent(event)
+        Mixpanel.mainInstance().time(event: event)
     }
     
     func stopTimingEvent(_ event: String, withProperties properties: [String : Any]?) {
@@ -67,11 +65,9 @@ extension MixpanelService: TrackerTimedEventAnalytics {
 extension MixpanelService: TrackerPushNotificationAnalytics {
     
     func trackPushNotificationOpen(_ payload: [AnyHashable: Any]) {
-        self.mixpanelTracker.trackPushNotification(payload)
     }
     
     func registerForPushNotifications(_ deviceToken: Data) {
-        self.mixpanelTracker.people.addPushDeviceToken(deviceToken)
     }
     
 }
@@ -85,8 +81,8 @@ extension MixpanelService: TrackerUserProfileAnalytics {
             identifier = profile.email
         }
         if let identifier = identifier {
-            self.mixpanelTracker.identify(identifier)
-            var properties = [String: Any]()
+            Mixpanel.mainInstance().identify(distinctId: identifier)
+            var properties = [String: MixpanelType]()
             
             if let value = profile.firstname {
                 properties["$first_name"] = value
@@ -114,10 +110,10 @@ extension MixpanelService: TrackerUserProfileAnalytics {
             
             //Append the last custom properties
             for (key, property) in profile.customProperties {
-                properties[key] = property
+                properties[key] = property as? MixpanelType
             }
             
-            self.mixpanelTracker.people.set(properties)
+            Mixpanel.mainInstance().people.set(properties: properties)
         }
     }
     
@@ -127,11 +123,12 @@ extension MixpanelService: TrackerUserProfileAnalytics {
 extension MixpanelService: TrackerEventSuperPropertiesAnalytics {
     
     func registerEventSuperProperties(_ properties: [String : Any]) {
-        self.mixpanelTracker.registerSuperProperties(properties)
+        let properties = properties as? Properties
+        properties.map { Mixpanel.mainInstance().registerSuperProperties($0) }
     }
     
     func clearEventSuperProperties() {
-        self.mixpanelTracker.clearSuperProperties()
+        Mixpanel.mainInstance().clearSuperProperties()
     }
     
 }

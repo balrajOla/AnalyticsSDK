@@ -1,0 +1,9 @@
+${PODS_ROOT}/Target Support Files/Pods-AnalyticsSDK/Pods-AnalyticsSDK-resources.sh
+${PODS_ROOT}/Mixpanel-swift/Mixpanel/MiniNotificationViewController.xib
+${PODS_ROOT}/Mixpanel-swift/Mixpanel/MPCloseButton.png
+${PODS_ROOT}/Mixpanel-swift/Mixpanel/MPCloseButton@2x.png
+${PODS_ROOT}/Mixpanel-swift/Mixpanel/MPCloseButton@3x.png
+${PODS_ROOT}/Mixpanel-swift/Mixpanel/placeholder-image.png
+${PODS_ROOT}/Mixpanel-swift/Mixpanel/TakeoverNotificationViewController~ipad.xib
+${PODS_ROOT}/Mixpanel-swift/Mixpanel/TakeoverNotificationViewController~iphonelandscape.xib
+${PODS_ROOT}/Mixpanel-swift/Mixpanel/TakeoverNotificationViewController~iphoneportrait.xib
