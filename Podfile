@@ -8,6 +8,8 @@ workspace 'AnalyticsSDK'
 project 'AnalyticsSDK/AnalyticsSDK.xcodeproj'
 
 def mainApp_pod
+  pod 'AnalyticsSDKFramework', :podspec => 'AnalyticsSDKFramework/AnalyticsSDKFramework.podspec'
+  
   pod 'Mixpanel-swift'
 end
 
