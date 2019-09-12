@@ -22,7 +22,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AnalyticsSDKFramework:
-    :commit: a50743c310b08020a0a16f66f775987cf8d0296f
+    :commit: 0aafecf9e169fd334eb86d89427946662ee8810a
     :git: https://github.com/balrajOla/AnalyticsSDK
 
 SPEC CHECKSUMS:

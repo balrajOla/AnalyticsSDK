@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B18FE86D4891BC6D3B84A69 /* libPods-AnalyticsSDKFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F2E01133E37F7318B9852A /* libPods-AnalyticsSDKFramework.a */; };
+		20618141BC67F00BD5872C14 /* libPods-AnalyticsSDKFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F2E01133E37F7318B9852A /* libPods-AnalyticsSDKFramework.a */; };
 		A268067C2324DEE200645FF4 /* AnalyticsSDKFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = A268067A2324DEE200645FF4 /* AnalyticsSDKFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A268068C2324E51900645FF4 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268068B2324E51900645FF4 /* Tracker.swift */; };
 		A268068F2324E57500645FF4 /* TrackerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268068E2324E57500645FF4 /* TrackerEvent.swift */; };
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B18FE86D4891BC6D3B84A69 /* libPods-AnalyticsSDKFramework.a in Frameworks */,
+				20618141BC67F00BD5872C14 /* libPods-AnalyticsSDKFramework.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +450,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AnalyticsSDKFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,9 +459,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Balraj.AnalyticsSDKFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_UIKITFORMAC = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -477,6 +479,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AnalyticsSDKFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,8 +488,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Balraj.AnalyticsSDKFramework;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_UIKITFORMAC = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -26,7 +26,7 @@ struct NAAnalyticsService: TrackerService {
     
     let configuration = [NAAnalyticsEventPriority.high: (interval: 1, count: 1),
                          NAAnalyticsEventPriority.medium: (interval: 2, count: 3),
-                         NAAnalyticsEventPriority.medium: (interval: 4, count: 5)]
+                         NAAnalyticsEventPriority.low: (interval: 4, count: 5)]
     
     init() {
         NoonAcademyAnalytics.configure(handler: { (events, callback) in

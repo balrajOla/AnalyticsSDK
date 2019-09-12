@@ -18,6 +18,14 @@ class ViewController: UIViewController {
         TrackerEventConstants.trackLaunchScreenViewDidLoad(nil)
     }
 
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        TrackerEventConstants.trackLaunchScreenViewWillAppear(nil)
+    }
+    
+    @IBAction func buttonClicked(_ sender: Any) {
+        TrackerEventConstants.trackLaunchScreenButtonClicked(nil)
+    }
 }
 

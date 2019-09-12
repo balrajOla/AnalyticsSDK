@@ -7,33 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8EC292892C17D22D5F17005D /* libPods-AnalyticsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AABD39CD2BFB88F4AD0082A /* libPods-AnalyticsSDK.a */; };
 		A268065A2324DEB600645FF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806592324DEB600645FF4 /* AppDelegate.swift */; };
 		A268065C2324DEB600645FF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268065B2324DEB600645FF4 /* SceneDelegate.swift */; };
 		A268065E2324DEB600645FF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268065D2324DEB600645FF4 /* ViewController.swift */; };
 		A26806612324DEB600645FF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A268065F2324DEB600645FF4 /* Main.storyboard */; };
 		A26806632324DEB700645FF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A26806622324DEB700645FF4 /* Assets.xcassets */; };
 		A26806662324DEB700645FF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26806642324DEB700645FF4 /* LaunchScreen.storyboard */; };
-		A26806842324E18400645FF4 /* AnalyticsSDKFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26806832324E18400645FF4 /* AnalyticsSDKFramework.framework */; };
-		A26806852324E18400645FF4 /* AnalyticsSDKFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A26806832324E18400645FF4 /* AnalyticsSDKFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A26806AD2326CD2500645FF4 /* AnalyticsTrackerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806AC2326CD2500645FF4 /* AnalyticsTrackerConstants.swift */; };
 		A26806B02326D16A00645FF4 /* MixpanelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806AF2326D16A00645FF4 /* MixpanelService.swift */; };
 		A26806BF232A638000645FF4 /* NAAnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806BE232A638000645FF4 /* NAAnalyticsService.swift */; };
+		E9BAB36B67FA4299060623D1 /* libPods-AnalyticsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AABD39CD2BFB88F4AD0082A /* libPods-AnalyticsSDK.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		A26806862324E18400645FF4 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A26806852324E18400645FF4 /* AnalyticsSDKFramework.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2BCF95F7A3B91BA7BAEA826B /* Pods-AnalyticsSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsSDK.debug.xcconfig"; path = "Target Support Files/Pods-AnalyticsSDK/Pods-AnalyticsSDK.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,8 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A26806842324E18400645FF4 /* AnalyticsSDKFramework.framework in Frameworks */,
-				8EC292892C17D22D5F17005D /* libPods-AnalyticsSDK.a in Frameworks */,
+				E9BAB36B67FA4299060623D1 /* libPods-AnalyticsSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +130,6 @@
 				A26806522324DEB600645FF4 /* Sources */,
 				A26806532324DEB600645FF4 /* Frameworks */,
 				A26806542324DEB600645FF4 /* Resources */,
-				A26806862324E18400645FF4 /* Embed Frameworks */,
 				49E9BA2D054DC2EE0F440F2D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -405,6 +387,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 998QCUR89P;
 				INFOPLIST_FILE = AnalyticsSDK/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -412,7 +395,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Balraj.AnalyticsSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -424,6 +407,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 998QCUR89P;
 				INFOPLIST_FILE = AnalyticsSDK/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -431,7 +415,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Balraj.AnalyticsSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

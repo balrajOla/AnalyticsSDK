@@ -1,0 +1,6 @@
+module Pods_AnalyticsSDKFramework {
+  umbrella header "Pods-AnalyticsSDKFramework-umbrella.h"
+
+  export *
+  module * { export * }
+}

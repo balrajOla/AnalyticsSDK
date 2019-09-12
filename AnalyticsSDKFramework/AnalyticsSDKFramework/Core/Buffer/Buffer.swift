@@ -20,7 +20,6 @@ internal struct Buffer {
     private init(with handler: @escaping ((_ data: [EventDataType]) -> ()),
                  _ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)]) {
         self.streams = PublishSubject<(event: String, payload: [String: Any]?, priority: NAAnalyticsEventPriority)>()
-        self.subscribe(toHandler: handler)(configuration)
     }
     
     //MARK: - Public Functions
@@ -29,7 +28,9 @@ internal struct Buffer {
         -> (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)])
         -> Buffer {
             return { (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)]) -> Buffer in
-                return Buffer(with: handler, configuration)
+                let bufferObj = Buffer(with: handler, configuration)
+                bufferObj.subscribe(toHandler: handler)(configuration)
+                return bufferObj
             }
     }
     
