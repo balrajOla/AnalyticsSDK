@@ -10,21 +10,28 @@ import Foundation
 
 public class NoonAcademyAnalytics {
     
-    // MARK: - Private Variables
+    //MARK: - Public shared instance
+    public static let sharedInstance = NoonAcademyAnalytics()
+    
+    //MARK: - Private Variables
     fileprivate var callbackHandler: ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (Result<Single, Error>) -> ()) -> ())?
     fileprivate var token = UUID().uuidString
     fileprivate var startedDate: Date = Date()
     fileprivate var bufferStream: Buffer?
     
     //MARK: - Private Constructor
-    public init() {}
+    private init() {}
     
     //MARK: - Configuration
     /// This function sets the callback handler and calls `func start()`
     public func configure(handler: @escaping ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (Result<Single, Error>) -> ()) -> ()))
         -> (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)])
         -> Void {
-            return { (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)]) -> Void in
+            return {[weak self] (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)]) -> Void in
+                guard let self = self else {
+                    return
+                }
+                
                 DispatchQueue.once(token: self.token) {
                     self.callbackHandler = handler
                     
@@ -43,7 +50,11 @@ public class NoonAcademyAnalytics {
         self.startedDate = Date()
         
         //Create a new instance of Buffer
-        self.bufferStream = Buffer(with: { event in
+        self.bufferStream = Buffer(with: {[weak self] event in
+            guard let self = self else {
+                return
+            }
+            
             //TODO:- Push to this data to the queue and then callback handler will be called here
             
             self.callbackHandler?(event.map({ (event: $0.event, payload: $0.payload) })) { _ in

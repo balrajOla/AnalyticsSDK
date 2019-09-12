@@ -18,24 +18,26 @@ public struct NAAnalyticsServiceConstants {
 /// - Event analytics
 struct NAAnalyticsService: TrackerService {
     
+    //MARK: - Internal variables
     var serviceName: String = NAAnalyticsServiceConstants.serviceName
     var versionString: String = NAAnalyticsServiceConstants.versionString
     
-    let analyticsService = NoonAcademyAnalytics()
+    //MARK: - Private Variables
+    private let analyticsService = NoonAcademyAnalytics.sharedInstance
+    private let configuration = [NAAnalyticsEventPriority.high: (interval: 1, count: 1),
+                         NAAnalyticsEventPriority.medium: (interval: 2, count: 5),
+                         NAAnalyticsEventPriority.low: (interval: 8, count: 9)]
     
-    let configuration = [NAAnalyticsEventPriority.high: (interval: 1, count: 1),
-                         NAAnalyticsEventPriority.medium: (interval: 2, count: 3),
-                         NAAnalyticsEventPriority.low: (interval: 4, count: 5)]
-    
+    //MARK: - Constructor
     init() {
         self.analyticsService.configure(handler: { (events, callback) in
             print("\n \n ------Noon Academy Analytics events are been looged------")
             print("\n ------START------")
             _ = events.map { event -> Void in
                 if let properties = event.payload {
-                    print("\n Track event \"\(event.event)\" with properties \"\(properties.debugDescription)\"")
+                    print("\n Date: \(Date()), Track event \"\(event.event)\" with properties \"\(properties.debugDescription)\"")
                 } else {
-                    print("\n Track event \"\(event.event)\" without properties")
+                    print("\n Date: \(Date()), Track event \"\(event.event)\" without properties")
                 }
             }
             print("\n------END------")
@@ -44,6 +46,7 @@ struct NAAnalyticsService: TrackerService {
         })(configuration)
     }
     
+    //MARK: - Implemented lifecycle functions
     /// Called when the Tracker has been started using `func startTracking()`. Some services can use this to start a session.
     func start() {
         self.analyticsService.start(withConfiguration: configuration)

@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-internal class Buffer {
+internal struct Buffer {
     //MARK: - Private Variables
     fileprivate let streams = PublishSubject<(event: String, payload: [String: Any]?, priority: NAAnalyticsEventPriority)>()
     fileprivate let defaultBufferConfig = (interval: 1, count: 1)
