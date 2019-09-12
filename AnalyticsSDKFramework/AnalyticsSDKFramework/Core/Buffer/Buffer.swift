@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-internal struct Buffer {
+internal class Buffer {
     //MARK: - Private Variables
     fileprivate var streams: PublishSubject<(event: String, payload: [String: Any]?, priority: NAAnalyticsEventPriority)>
     fileprivate static let defaultBufferConfig = (interval: 1, count: 1)
@@ -24,7 +24,7 @@ internal struct Buffer {
     
     //MARK: - Public Functions
     // This function creates an instance of Buffer and returns back
-    public static func create(withHandler handler: @escaping ((_ data: [EventDataType]) -> ()))
+    public func create(withHandler handler: @escaping ((_ data: [EventDataType]) -> ()))
         -> (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)])
         -> Buffer {
             return { (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)]) -> Buffer in
@@ -56,7 +56,7 @@ internal struct Buffer {
         -> Void {
             return { (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)]) -> Void in
                 let streamHandler = self.setStream(with: handler)
-                
+
                 streamHandler(self.streams.filter{ $0.priority == .high })(configuration[.high] ?? Buffer.defaultBufferConfig)
                 streamHandler(self.streams.filter{ $0.priority == .medium })(configuration[.medium] ?? Buffer.defaultBufferConfig)
                 streamHandler(self.streams.filter{ $0.priority == .low })(configuration[.low] ?? Buffer.defaultBufferConfig)

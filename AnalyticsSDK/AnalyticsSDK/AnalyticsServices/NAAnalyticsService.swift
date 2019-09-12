@@ -29,7 +29,7 @@ struct NAAnalyticsService: TrackerService {
                          NAAnalyticsEventPriority.low: (interval: 4, count: 5)]
     
     init() {
-        NoonAcademyAnalytics.configure(handler: { (events, callback) in
+        self.analyticsService.configure(handler: { (events, callback) in
             print("\n \n ------Noon Academy Analytics events are been looged------")
             print("\n ------START------")
             _ = events.map { event -> Void in
@@ -47,12 +47,12 @@ struct NAAnalyticsService: TrackerService {
     
     /// Called when the Tracker has been started using `func startTracking()`. Some services can use this to start a session.
     func start() {
-        NoonAcademyAnalytics.start(withConfiguration: configuration)
+        self.analyticsService.start(withConfiguration: configuration)
     }
     
     /// Called when the Tracker has been stopped using `func stopTracking()`. Some services can use this to end a session.
     func stop() {
-        NoonAcademyAnalytics.stop()
+        self.analyticsService.stop()
     }
 }
 

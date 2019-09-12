@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct NoonAcademyAnalytics {
+public class NoonAcademyAnalytics {
     
     //MARK: - Shared instances
     fileprivate (set) public static var sharedInstance = NoonAcademyAnalytics()
@@ -24,32 +24,32 @@ public struct NoonAcademyAnalytics {
     
     //MARK: - Configuration
     /// This function sets the callback handler and calls `func start()`
-    public static func configure(handler: @escaping ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (Result<Single, Error>) -> ()) -> ()))
+    public func configure(handler: @escaping ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (Result<Single, Error>) -> ()) -> ()))
         -> (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)])
         -> Void {
             return { (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)]) -> Void in
-                DispatchQueue.once(token: NoonAcademyAnalytics.sharedInstance.token) {
-                    NoonAcademyAnalytics.sharedInstance.callbackHandler = handler
+                DispatchQueue.once(token: self.token) {
+                    self.callbackHandler = handler
                     
-                    NoonAcademyAnalytics.start(withConfiguration: configuration)
+                    NoonAcademyAnalytics.sharedInstance.start(withConfiguration: configuration)
                 }
             }
     }
     
     //MARK: - Public Function
     /// This initiates the analytics sdk
-    public static func start(withConfiguration configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)]) {
-        guard let _ = NoonAcademyAnalytics.sharedInstance.callbackHandler else {
+    public func start(withConfiguration configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)]) {
+        guard let _ = self.callbackHandler else {
             fatalError("NoonAcademyAnalytics need to be configured before starting")
         }
         
-        NoonAcademyAnalytics.sharedInstance.startedDate = Date()
+        self.startedDate = Date()
         
         //Create a new instance of Buffer
-        NoonAcademyAnalytics.sharedInstance.bufferStream = Buffer.create(withHandler: { event in
+        self.bufferStream = Buffer.create(withHandler: { event in
             //TODO:- Push to this data to the queue and then callback handler will be called here
             
-            NoonAcademyAnalytics.sharedInstance.callbackHandler?(event.map({ (event: $0.event, payload: $0.payload) })) { _ in
+            self.callbackHandler?(event.map({ (event: $0.event, payload: $0.payload) })) { _ in
                 // TODO: Call Queue system to delete the data if success or inform queue to retry
             }
         })(configuration)
@@ -65,11 +65,11 @@ public struct NoonAcademyAnalytics {
     }
     
     /// Should be called to end the analytics sdk
-    public static func stop() {
-        NoonAcademyAnalytics.sharedInstance.token = UUID().uuidString
+    public func stop() {
+        self.token = UUID().uuidString
         
         //Close the running buffer
-        NoonAcademyAnalytics.sharedInstance.bufferStream?.close()
+        self.bufferStream?.close()
         
         //TODO:- Complete the Queue
     }
