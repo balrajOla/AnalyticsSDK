@@ -55,3 +55,12 @@ struct NAAnalyticsService: TrackerService {
         NoonAcademyAnalytics.stop()
     }
 }
+
+/// MARK: - TrackerEventAnalytics
+extension NAAnalyticsService: TrackerEventAnalytics {
+    
+    func trackEvent(_ event: String, withProperties properties: [String : Any]?, priority: EventPriority) {
+        self.analyticsService.track(event: event, priority: priority, payload: properties)
+    }
+    
+}
