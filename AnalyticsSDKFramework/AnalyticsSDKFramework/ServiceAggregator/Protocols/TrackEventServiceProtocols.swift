@@ -26,7 +26,7 @@ public protocol TrackerEventAnalytics: TrackerService {
     /// - Parameters:
     ///   - event: The name of the event that was received. This can contain anything including spaces and capital letters.
     ///   - properties: The properties associated with this event, these do not include the super properties. The implementation of the service is responsible for managing the super properties.
-    func trackEvent(_ event: String, withProperties properties: [String: Any]?)
+    func trackEvent(_ event: String, withProperties properties: [String: Any]?, priority: EventPriority)
 }
 
 //MARK: - Timed Events
@@ -44,7 +44,7 @@ public protocol TrackerTimedEventAnalytics: TrackerService {
     /// - Parameters:
     ///   - event: The name of the event that was received. This can contain anything including spaces and capital letters.
     ///   - properties: The properties associated with this event, these do not include the super properties. The implementation of the service is responsible for managing the super properties.
-    func stopTimingEvent(_ event: String, withProperties properties: [String: Any]?)
+    func stopTimingEvent(_ event: String, withProperties properties: [String: Any]?, priority: EventPriority)
     
 }
 

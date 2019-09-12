@@ -53,7 +53,7 @@ open class TrackerDebugService: NSObject, TrackerService, TrackerEventAnalytics,
     
     //MARK: - Events
     
-    public func trackEvent(_ event: String, withProperties properties: [String : Any]?) {
+    public func trackEvent(_ event: String, withProperties properties: [String : Any]?, priority: EventPriority) {
         if let properties = properties {
             self.logEntry("\(self.serviceName): Track event \"\(event)\" with properties \"\(properties.debugDescription)\"")
         } else {
@@ -68,7 +68,7 @@ open class TrackerDebugService: NSObject, TrackerService, TrackerEventAnalytics,
         self.logEntry("\(self.serviceName): Start timing \"\(event)\"")
     }
     
-    public func stopTimingEvent(_ event: String, withProperties properties: [String : Any]?) {
+    public func stopTimingEvent(_ event: String, withProperties properties: [String : Any]?, priority: EventPriority) {
         if let properties = properties {
             self.logEntry("\(self.serviceName): Stop timing \"\(event)\" with properties\"\(properties.debugDescription)\"")
         } else {

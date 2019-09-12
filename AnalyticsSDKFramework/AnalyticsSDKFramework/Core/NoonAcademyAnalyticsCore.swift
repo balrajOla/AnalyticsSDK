@@ -65,11 +65,11 @@ public struct NoonAcademyAnalytics {
     }
     
     /// Should be called to end the analytics sdk
-    public static func end() {
+    public static func stop() {
         NoonAcademyAnalytics.sharedInstance.token = UUID().uuidString
         
-        //Complete the running buffer
-        NoonAcademyAnalytics.sharedInstance.bufferStream?.end()
+        //Close the running buffer
+        NoonAcademyAnalytics.sharedInstance.bufferStream?.close()
         
         //TODO:- Complete the Queue
     }

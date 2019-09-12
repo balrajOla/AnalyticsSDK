@@ -45,7 +45,7 @@ internal struct Buffer {
     }
     
     /// This function ends and flush out all the pending data from the buffer
-    public func end() {
+    public func close() {
         self.streams.onCompleted()
     }
     

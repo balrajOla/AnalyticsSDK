@@ -41,7 +41,7 @@ struct MixpanelService: TrackerService {
 /// MARK: - TrackerEventAnalytics
 extension MixpanelService: TrackerEventAnalytics {
     
-    func trackEvent(_ event: String, withProperties properties: [String : Any]?) {
+    func trackEvent(_ event: String, withProperties properties: [String : Any]?, priority: EventPriority) {
         let properties = properties as? Properties
         Mixpanel.mainInstance().track(event: event, properties: properties)
     }
@@ -55,8 +55,8 @@ extension MixpanelService: TrackerTimedEventAnalytics {
         Mixpanel.mainInstance().time(event: event)
     }
     
-    func stopTimingEvent(_ event: String, withProperties properties: [String : Any]?) {
-        self.trackEvent(event, withProperties: properties)
+    func stopTimingEvent(_ event: String, withProperties properties: [String : Any]?, priority: EventPriority) {
+        self.trackEvent(event, withProperties: properties, priority: priority)
     }
     
 }

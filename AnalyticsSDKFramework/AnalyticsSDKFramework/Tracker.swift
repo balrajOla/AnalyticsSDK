@@ -80,7 +80,7 @@ extension Tracker {
                     _ = self.services
                         .filter { service -> Bool in services.contains(service.serviceName) }
                         .compactMap { $0 as? TrackerEventAnalytics }
-                        .map { eventTrackerServices -> Void in eventTrackerServices.trackEvent(event.name, withProperties: payload.dictionary) }
+                        .map { eventTrackerServices -> Void in eventTrackerServices.trackEvent(event.name, withProperties: payload.dictionary, priority: event.priority) }
                 }
             }
     }
@@ -140,7 +140,7 @@ public extension Tracker {
                     _ = self.services
                         .filter { service -> Bool in services.contains(service.serviceName) }
                         .compactMap { $0 as? TrackerTimedEventAnalytics }
-                        .map { eventTrackerServices -> Void in eventTrackerServices.stopTimingEvent(event.name, withProperties: payload?.dictionary) }
+                        .map { eventTrackerServices -> Void in eventTrackerServices.stopTimingEvent(event.name, withProperties: payload?.dictionary, priority: event.priority) }
                 }
             }
     }
