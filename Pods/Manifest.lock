@@ -9,6 +9,7 @@ PODS:
 DEPENDENCIES:
   - AnalyticsSDKFramework (from `AnalyticsSDKFramework/AnalyticsSDKFramework.podspec`)
   - Mixpanel-swift
+  - RxSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -21,14 +22,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AnalyticsSDKFramework:
-    :commit: 1612373df41fa8b29c7676b1930a2a515d9027ec
+    :commit: a50743c310b08020a0a16f66f775987cf8d0296f
     :git: https://github.com/balrajOla/AnalyticsSDK
 
 SPEC CHECKSUMS:
-  AnalyticsSDKFramework: a56a0ae33909520b79e17852a31f900fac896abe
+  AnalyticsSDKFramework: 8ee4f53174596887209bcf200ab6e998ffbc4194
   Mixpanel-swift: 1542908cda2c3858027e1d38f31f34fb6b16f4fc
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
 
-PODFILE CHECKSUM: 7d8482c72bda13db01a51c55765ad7fbf745fb5d
+PODFILE CHECKSUM: 9f37075306a4ae71d0fb0173b6c5950d1b199a1b
 
 COCOAPODS: 1.7.0

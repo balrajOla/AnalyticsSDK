@@ -11,8 +11,7 @@
   "source": {
     "git": "https://github.com/balrajOla/AnalyticsSDK"
   },
-  "source_files": "Source/**/*.swift",
-  "static_framework": true,
+  "source_files": "AnalyticsSDKFramework",
   "dependencies": {
     "RxSwift": [
 

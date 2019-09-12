@@ -17,3 +17,8 @@ target 'AnalyticsSDK' do
 project 'AnalyticsSDK/AnalyticsSDK.xcodeproj'
 mainApp_pod
 end
+
+target 'AnalyticsSDKFramework' do
+project 'AnalyticsSDKFramework/AnalyticsSDKFramework.xcodeproj'
+  pod 'RxSwift'
+end

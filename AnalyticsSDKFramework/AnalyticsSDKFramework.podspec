@@ -9,8 +9,7 @@ Pod::Spec.new do |s|
   s.license      = "Copyleft"
   s.author       = { "Balraj Singh" => "erbalrajs@gmail.com" }
   s.source       = { :git => "https://github.com/balrajOla/AnalyticsSDK" }
-  s.source_files  = "Source/**/*.swift"
-  s.static_framework = true
-
+  s.source_files = "AnalyticsSDKFramework"
+ 
   s.dependency 'RxSwift'
 end
