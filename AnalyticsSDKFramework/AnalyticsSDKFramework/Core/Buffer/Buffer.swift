@@ -25,7 +25,7 @@ internal struct Buffer {
     
     //MARK: - Public Functions
     // This function creates an instance of Buffer and returns back
-    public func create(withHandler handler: @escaping ((_ data: [EventDataType]) -> ()))
+    public static func create(withHandler handler: @escaping ((_ data: [EventDataType]) -> ()))
         -> (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)])
         -> Buffer {
             return { (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)]) -> Buffer in
