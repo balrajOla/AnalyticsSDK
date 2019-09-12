@@ -10,9 +10,6 @@ import Foundation
 
 public class NoonAcademyAnalytics {
     
-    //MARK: - Shared instances
-    fileprivate (set) public static var sharedInstance = NoonAcademyAnalytics()
-    
     // MARK: - Private Variables
     fileprivate var callbackHandler: ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (Result<Single, Error>) -> ()) -> ())?
     fileprivate var token = UUID().uuidString
@@ -20,7 +17,7 @@ public class NoonAcademyAnalytics {
     fileprivate var bufferStream: Buffer?
     
     //MARK: - Private Constructor
-    private init() {}
+    public init() {}
     
     //MARK: - Configuration
     /// This function sets the callback handler and calls `func start()`
@@ -31,7 +28,7 @@ public class NoonAcademyAnalytics {
                 DispatchQueue.once(token: self.token) {
                     self.callbackHandler = handler
                     
-                    NoonAcademyAnalytics.sharedInstance.start(withConfiguration: configuration)
+                    self.start(withConfiguration: configuration)
                 }
             }
     }
@@ -46,13 +43,13 @@ public class NoonAcademyAnalytics {
         self.startedDate = Date()
         
         //Create a new instance of Buffer
-        self.bufferStream = Buffer.create(withHandler: { event in
+        self.bufferStream = Buffer(with: { event in
             //TODO:- Push to this data to the queue and then callback handler will be called here
             
             self.callbackHandler?(event.map({ (event: $0.event, payload: $0.payload) })) { _ in
                 // TODO: Call Queue system to delete the data if success or inform queue to retry
             }
-        })(configuration)
+        }, configuration)
     }
     
     /// This function tracks the analytics events sent via application

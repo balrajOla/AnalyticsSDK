@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import AnalyticsSDKFramework
 import Mixpanel
 
 /**

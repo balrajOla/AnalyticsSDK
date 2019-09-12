@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import AnalyticsSDKFramework
 
 public struct NAAnalyticsServiceConstants {
     public static let serviceName = "NoonAcademyAnalyticsService"
@@ -22,7 +21,7 @@ struct NAAnalyticsService: TrackerService {
     var serviceName: String = NAAnalyticsServiceConstants.serviceName
     var versionString: String = NAAnalyticsServiceConstants.versionString
     
-    let analyticsService = NoonAcademyAnalytics.sharedInstance
+    let analyticsService = NoonAcademyAnalytics()
     
     let configuration = [NAAnalyticsEventPriority.high: (interval: 1, count: 1),
                          NAAnalyticsEventPriority.medium: (interval: 2, count: 3),

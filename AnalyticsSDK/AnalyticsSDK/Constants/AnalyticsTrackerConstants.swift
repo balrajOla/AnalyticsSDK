@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import AnalyticsSDKFramework
 
 struct TrackerEventConstants {
-    public static let trackApplicationLaunch = Tracker.sharedInsatance.track(withServices: [NAAnalyticsServiceConstants.serviceName])(TrackerEvent<Single>(name: "LaunchScreenViewDidLoad", priority: .high))
+    public static let trackApplicationLaunch = Tracker.sharedInsatance.track(withServices: [NAAnalyticsServiceConstants.serviceName])(TrackerEvent<Single>(name: "ApplicationFinishLaunching", priority: .high))
     
     public static let trackLaunchScreenViewDidLoad = Tracker.sharedInsatance.track(withServices: [NAAnalyticsServiceConstants.serviceName])(TrackerEvent<Single>(name: "LaunchScreenViewDidLoad", priority: .medium))
     

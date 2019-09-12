@@ -1,4 +1,4 @@
-module Pods_AnalyticsSDK {
+framework module Pods_AnalyticsSDK {
   umbrella header "Pods-AnalyticsSDK-umbrella.h"
 
   export *

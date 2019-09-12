@@ -1,13 +1,10 @@
 PODS:
-  - AnalyticsSDKFramework (0.0.1):
-    - RxSwift
   - Mixpanel-swift (2.6.5):
     - Mixpanel-swift/Complete (= 2.6.5)
   - Mixpanel-swift/Complete (2.6.5)
   - RxSwift (5.0.0)
 
 DEPENDENCIES:
-  - AnalyticsSDKFramework (from `AnalyticsSDKFramework/AnalyticsSDKFramework.podspec`)
   - Mixpanel-swift
   - RxSwift
 
@@ -16,20 +13,10 @@ SPEC REPOS:
     - Mixpanel-swift
     - RxSwift
 
-EXTERNAL SOURCES:
-  AnalyticsSDKFramework:
-    :podspec: AnalyticsSDKFramework/AnalyticsSDKFramework.podspec
-
-CHECKOUT OPTIONS:
-  AnalyticsSDKFramework:
-    :commit: 0aafecf9e169fd334eb86d89427946662ee8810a
-    :git: https://github.com/balrajOla/AnalyticsSDK
-
 SPEC CHECKSUMS:
-  AnalyticsSDKFramework: 8ee4f53174596887209bcf200ab6e998ffbc4194
   Mixpanel-swift: 1542908cda2c3858027e1d38f31f34fb6b16f4fc
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
 
-PODFILE CHECKSUM: 9f37075306a4ae71d0fb0173b6c5950d1b199a1b
+PODFILE CHECKSUM: 6dda0a9440f0f8032e5f1a6983d30d7b26d7227b
 
 COCOAPODS: 1.7.0

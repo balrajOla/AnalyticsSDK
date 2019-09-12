@@ -11,29 +11,18 @@ import RxSwift
 
 internal class Buffer {
     //MARK: - Private Variables
-    fileprivate var streams: PublishSubject<(event: String, payload: [String: Any]?, priority: NAAnalyticsEventPriority)>
-    fileprivate static let defaultBufferConfig = (interval: 1, count: 1)
+    fileprivate let streams = PublishSubject<(event: String, payload: [String: Any]?, priority: NAAnalyticsEventPriority)>()
+    fileprivate let defaultBufferConfig = (interval: 1, count: 1)
     fileprivate let disposableBag = DisposeBag()
     public typealias EventDataType = (event: String, payload: [String: Any]?, priority: NAAnalyticsEventPriority)
     
     //MARK: - Constructor
-    private init(with handler: @escaping ((_ data: [EventDataType]) -> ()),
-                 _ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)]) {
-        self.streams = PublishSubject<(event: String, payload: [String: Any]?, priority: NAAnalyticsEventPriority)>()
+    public init(with handler: @escaping ((_ data: [EventDataType]) -> ()),
+                _ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)]) {
+        self.subscribe(toHandler: handler, configuration)
     }
     
     //MARK: - Public Functions
-    // This function creates an instance of Buffer and returns back
-    public func create(withHandler handler: @escaping ((_ data: [EventDataType]) -> ()))
-        -> (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)])
-        -> Buffer {
-            return { (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)]) -> Buffer in
-                let bufferObj = Buffer(with: handler, configuration)
-                bufferObj.subscribe(toHandler: handler)(configuration)
-                return bufferObj
-            }
-    }
-    
     /// This function pushes a data with ceratin priority
     /// - Parameter priority - determines the priority of the data
     /// - Parameter data - the actual data that needs to be buffered and pushed forward
@@ -51,16 +40,13 @@ internal class Buffer {
     }
     
     //MARK: - Private functions
-    private func subscribe(toHandler handler: @escaping ((_ data: [EventDataType]) -> ()))
-        -> (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)])
+    private func subscribe(toHandler handler: @escaping ((_ data: [EventDataType]) -> ()), _ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)])
         -> Void {
-            return { (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)]) -> Void in
-                let streamHandler = self.setStream(with: handler)
-
-                streamHandler(self.streams.filter{ $0.priority == .high })(configuration[.high] ?? Buffer.defaultBufferConfig)
-                streamHandler(self.streams.filter{ $0.priority == .medium })(configuration[.medium] ?? Buffer.defaultBufferConfig)
-                streamHandler(self.streams.filter{ $0.priority == .low })(configuration[.low] ?? Buffer.defaultBufferConfig)
-            }
+            let streamHandler = self.setStream(with: handler)
+            
+            streamHandler(self.streams.filter{ $0.priority == .high })(configuration[.high] ?? self.defaultBufferConfig)
+            streamHandler(self.streams.filter{ $0.priority == .medium })(configuration[.medium] ?? self.defaultBufferConfig)
+            streamHandler(self.streams.filter{ $0.priority == .low })(configuration[.low] ?? self.defaultBufferConfig)
     }
     
     private func setStream (with handler: @escaping ((_ data: [EventDataType]) -> ()))
@@ -73,6 +59,7 @@ internal class Buffer {
                 return { (_ config: (interval: Int, count: Int))
                     -> Void in
                     stream.buffer(timeSpan: RxTimeInterval.seconds(config.interval), count: config.count, scheduler: MainScheduler.instance)
+                        .filter({ $0.count > 0 })
                         .subscribe({ (event) in
                             switch event {
                             case .next(let eventData):

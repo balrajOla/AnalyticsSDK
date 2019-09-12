@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AnalyticsSDKFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		382EB65AEF9C1DE3BA528500 /* Pods_AnalyticsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA980C314B15DED9B08A5EF /* Pods_AnalyticsSDK.framework */; };
 		A268065A2324DEB600645FF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806592324DEB600645FF4 /* AppDelegate.swift */; };
 		A268065C2324DEB600645FF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268065B2324DEB600645FF4 /* SceneDelegate.swift */; };
 		A268065E2324DEB600645FF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268065D2324DEB600645FF4 /* ViewController.swift */; };
@@ -16,13 +17,38 @@
 		A26806AD2326CD2500645FF4 /* AnalyticsTrackerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806AC2326CD2500645FF4 /* AnalyticsTrackerConstants.swift */; };
 		A26806B02326D16A00645FF4 /* MixpanelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806AF2326D16A00645FF4 /* MixpanelService.swift */; };
 		A26806BF232A638000645FF4 /* NAAnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806BE232A638000645FF4 /* NAAnalyticsService.swift */; };
-		E9BAB36B67FA4299060623D1 /* libPods-AnalyticsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AABD39CD2BFB88F4AD0082A /* libPods-AnalyticsSDK.a */; };
+		A2680703232AAE9A00645FF4 /* DispatchQueue+Once.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806ED232AAE9A00645FF4 /* DispatchQueue+Once.swift */; };
+		A2680704232AAE9A00645FF4 /* Encode+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806EE232AAE9A00645FF4 /* Encode+Dictionary.swift */; };
+		A2680705232AAE9A00645FF4 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806EF232AAE9A00645FF4 /* ResultType.swift */; };
+		A2680706232AAE9A00645FF4 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806F0232AAE9A00645FF4 /* Tracker.swift */; };
+		A2680707232AAE9A00645FF4 /* NAAnalyticsEventPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806F3232AAE9A00645FF4 /* NAAnalyticsEventPriority.swift */; };
+		A2680708232AAE9A00645FF4 /* NoonAcademyAnalyticsCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806F4232AAE9A00645FF4 /* NoonAcademyAnalyticsCore.swift */; };
+		A2680709232AAE9A00645FF4 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806F6232AAE9A00645FF4 /* Queue.swift */; };
+		A268070A232AAE9A00645FF4 /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806F8232AAE9A00645FF4 /* Buffer.swift */; };
+		A268070B232AAE9A00645FF4 /* TrackerUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806FB232AAE9A00645FF4 /* TrackerUserProfile.swift */; };
+		A268070C232AAE9A00645FF4 /* TrackerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806FC232AAE9A00645FF4 /* TrackerEvent.swift */; };
+		A268070D232AAE9A00645FF4 /* EventPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806FD232AAE9A00645FF4 /* EventPriority.swift */; };
+		A268070E232AAE9A00645FF4 /* TrackEventServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806FF232AAE9A00645FF4 /* TrackEventServiceProtocols.swift */; };
+		A268070F232AAE9A00645FF4 /* TrackerServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680700232AAE9A00645FF4 /* TrackerServiceProtocol.swift */; };
+		A2680710232AAE9A00645FF4 /* TrackerDebugService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680702232AAE9A00645FF4 /* TrackerDebugService.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A26806C7232AAE0300645FF4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2BCF95F7A3B91BA7BAEA826B /* Pods-AnalyticsSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsSDK.debug.xcconfig"; path = "Target Support Files/Pods-AnalyticsSDK/Pods-AnalyticsSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		5A17E89B4130A8DFEC9A652C /* Pods-AnalyticsSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsSDK.release.xcconfig"; path = "Target Support Files/Pods-AnalyticsSDK/Pods-AnalyticsSDK.release.xcconfig"; sourceTree = "<group>"; };
-		7AABD39CD2BFB88F4AD0082A /* libPods-AnalyticsSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AnalyticsSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A26806562324DEB600645FF4 /* AnalyticsSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnalyticsSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A26806592324DEB600645FF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A268065B2324DEB600645FF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +61,23 @@
 		A26806AC2326CD2500645FF4 /* AnalyticsTrackerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTrackerConstants.swift; sourceTree = "<group>"; };
 		A26806AF2326D16A00645FF4 /* MixpanelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixpanelService.swift; sourceTree = "<group>"; };
 		A26806BE232A638000645FF4 /* NAAnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NAAnalyticsService.swift; sourceTree = "<group>"; };
+		A26806C0232AAD8F00645FF4 /* AnalyticsSDKFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AnalyticsSDKFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A26806C4232AAE0200645FF4 /* AnalyticsSDKFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AnalyticsSDKFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A26806ED232AAE9A00645FF4 /* DispatchQueue+Once.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Once.swift"; sourceTree = "<group>"; };
+		A26806EE232AAE9A00645FF4 /* Encode+Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Encode+Dictionary.swift"; sourceTree = "<group>"; };
+		A26806EF232AAE9A00645FF4 /* ResultType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		A26806F0232AAE9A00645FF4 /* Tracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
+		A26806F3232AAE9A00645FF4 /* NAAnalyticsEventPriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NAAnalyticsEventPriority.swift; sourceTree = "<group>"; };
+		A26806F4232AAE9A00645FF4 /* NoonAcademyAnalyticsCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonAcademyAnalyticsCore.swift; sourceTree = "<group>"; };
+		A26806F6232AAE9A00645FF4 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		A26806F8232AAE9A00645FF4 /* Buffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buffer.swift; sourceTree = "<group>"; };
+		A26806FB232AAE9A00645FF4 /* TrackerUserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerUserProfile.swift; sourceTree = "<group>"; };
+		A26806FC232AAE9A00645FF4 /* TrackerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerEvent.swift; sourceTree = "<group>"; };
+		A26806FD232AAE9A00645FF4 /* EventPriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPriority.swift; sourceTree = "<group>"; };
+		A26806FF232AAE9A00645FF4 /* TrackEventServiceProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackEventServiceProtocols.swift; sourceTree = "<group>"; };
+		A2680700232AAE9A00645FF4 /* TrackerServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerServiceProtocol.swift; sourceTree = "<group>"; };
+		A2680702232AAE9A00645FF4 /* TrackerDebugService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerDebugService.swift; sourceTree = "<group>"; };
+		EAA980C314B15DED9B08A5EF /* Pods_AnalyticsSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnalyticsSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9BAB36B67FA4299060623D1 /* libPods-AnalyticsSDK.a in Frameworks */,
+				382EB65AEF9C1DE3BA528500 /* Pods_AnalyticsSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +123,7 @@
 		A26806582324DEB600645FF4 /* AnalyticsSDK */ = {
 			isa = PBXGroup;
 			children = (
+				A26806C8232AAE3600645FF4 /* AnalyticsFramework */,
 				A26806AE2326D15400645FF4 /* AnalyticsServices */,
 				A26806A92326C49400645FF4 /* Constants */,
 				A26806592324DEB600645FF4 /* AppDelegate.swift */,
@@ -96,8 +140,10 @@
 		A26806822324E18400645FF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A26806C4232AAE0200645FF4 /* AnalyticsSDKFramework.framework */,
+				A26806C0232AAD8F00645FF4 /* AnalyticsSDKFramework.framework */,
 				A26806832324E18400645FF4 /* AnalyticsSDKFramework.framework */,
-				7AABD39CD2BFB88F4AD0082A /* libPods-AnalyticsSDK.a */,
+				EAA980C314B15DED9B08A5EF /* Pods_AnalyticsSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,6 +165,99 @@
 			path = AnalyticsServices;
 			sourceTree = "<group>";
 		};
+		A26806C8232AAE3600645FF4 /* AnalyticsFramework */ = {
+			isa = PBXGroup;
+			children = (
+				A26806F1232AAE9A00645FF4 /* Core */,
+				A26806F9232AAE9A00645FF4 /* ServiceAggregator */,
+				A26806F0232AAE9A00645FF4 /* Tracker.swift */,
+				A26806EC232AAE9A00645FF4 /* Utilities */,
+			);
+			path = AnalyticsFramework;
+			sourceTree = "<group>";
+		};
+		A26806EC232AAE9A00645FF4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A26806ED232AAE9A00645FF4 /* DispatchQueue+Once.swift */,
+				A26806EE232AAE9A00645FF4 /* Encode+Dictionary.swift */,
+				A26806EF232AAE9A00645FF4 /* ResultType.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A26806F1232AAE9A00645FF4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A26806F2232AAE9A00645FF4 /* Models */,
+				A26806F4232AAE9A00645FF4 /* NoonAcademyAnalyticsCore.swift */,
+				A26806F5232AAE9A00645FF4 /* Queue */,
+				A26806F7232AAE9A00645FF4 /* Buffer */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A26806F2232AAE9A00645FF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A26806F3232AAE9A00645FF4 /* NAAnalyticsEventPriority.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A26806F5232AAE9A00645FF4 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				A26806F6232AAE9A00645FF4 /* Queue.swift */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
+		A26806F7232AAE9A00645FF4 /* Buffer */ = {
+			isa = PBXGroup;
+			children = (
+				A26806F8232AAE9A00645FF4 /* Buffer.swift */,
+			);
+			path = Buffer;
+			sourceTree = "<group>";
+		};
+		A26806F9232AAE9A00645FF4 /* ServiceAggregator */ = {
+			isa = PBXGroup;
+			children = (
+				A26806FA232AAE9A00645FF4 /* Models */,
+				A26806FE232AAE9A00645FF4 /* Protocols */,
+				A2680701232AAE9A00645FF4 /* Services */,
+			);
+			path = ServiceAggregator;
+			sourceTree = "<group>";
+		};
+		A26806FA232AAE9A00645FF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A26806FB232AAE9A00645FF4 /* TrackerUserProfile.swift */,
+				A26806FC232AAE9A00645FF4 /* TrackerEvent.swift */,
+				A26806FD232AAE9A00645FF4 /* EventPriority.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A26806FE232AAE9A00645FF4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A26806FF232AAE9A00645FF4 /* TrackEventServiceProtocols.swift */,
+				A2680700232AAE9A00645FF4 /* TrackerServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A2680701232AAE9A00645FF4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A2680702232AAE9A00645FF4 /* TrackerDebugService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -130,7 +269,8 @@
 				A26806522324DEB600645FF4 /* Sources */,
 				A26806532324DEB600645FF4 /* Frameworks */,
 				A26806542324DEB600645FF4 /* Resources */,
-				49E9BA2D054DC2EE0F440F2D /* [CP] Copy Pods Resources */,
+				C9A574B8DA13074B7893447B /* [CP] Embed Pods Frameworks */,
+				A26806C7232AAE0300645FF4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,21 +328,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		49E9BA2D054DC2EE0F440F2D /* [CP] Copy Pods Resources */ = {
+		C9A574B8DA13074B7893447B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AnalyticsSDK/Pods-AnalyticsSDK-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AnalyticsSDK/Pods-AnalyticsSDK-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AnalyticsSDK/Pods-AnalyticsSDK-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AnalyticsSDK/Pods-AnalyticsSDK-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnalyticsSDK/Pods-AnalyticsSDK-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnalyticsSDK/Pods-AnalyticsSDK-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F65C4A9383F5E0344884CA26 /* [CP] Check Pods Manifest.lock */ = {
@@ -235,10 +375,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				A268065E2324DEB600645FF4 /* ViewController.swift in Sources */,
+				A2680704232AAE9A00645FF4 /* Encode+Dictionary.swift in Sources */,
+				A2680706232AAE9A00645FF4 /* Tracker.swift in Sources */,
 				A268065A2324DEB600645FF4 /* AppDelegate.swift in Sources */,
+				A2680709232AAE9A00645FF4 /* Queue.swift in Sources */,
 				A268065C2324DEB600645FF4 /* SceneDelegate.swift in Sources */,
+				A2680705232AAE9A00645FF4 /* ResultType.swift in Sources */,
+				A2680703232AAE9A00645FF4 /* DispatchQueue+Once.swift in Sources */,
 				A26806B02326D16A00645FF4 /* MixpanelService.swift in Sources */,
+				A268070A232AAE9A00645FF4 /* Buffer.swift in Sources */,
+				A2680708232AAE9A00645FF4 /* NoonAcademyAnalyticsCore.swift in Sources */,
+				A268070C232AAE9A00645FF4 /* TrackerEvent.swift in Sources */,
+				A2680710232AAE9A00645FF4 /* TrackerDebugService.swift in Sources */,
+				A2680707232AAE9A00645FF4 /* NAAnalyticsEventPriority.swift in Sources */,
 				A26806AD2326CD2500645FF4 /* AnalyticsTrackerConstants.swift in Sources */,
+				A268070F232AAE9A00645FF4 /* TrackerServiceProtocol.swift in Sources */,
+				A268070D232AAE9A00645FF4 /* EventPriority.swift in Sources */,
+				A268070B232AAE9A00645FF4 /* TrackerUserProfile.swift in Sources */,
+				A268070E232AAE9A00645FF4 /* TrackEventServiceProtocols.swift in Sources */,
 				A26806BF232A638000645FF4 /* NAAnalyticsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
