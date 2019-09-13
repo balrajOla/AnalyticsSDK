@@ -40,6 +40,9 @@ internal struct Buffer {
     }
     
     //MARK: - Private functions
+    /// This func is used internally to create priority level buffers and subscribe to it.
+    /// - Parameter handler: Need to pass a callback that will be called when a data is pushed out of a priority stream
+    /// - Parameter configuration: This helps to set the config for priority stream
     private func subscribe(toHandler handler: @escaping ((_ data: [EventDataType]) -> ()), _ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)])
         -> Void {
             let streamHandler = self.setStream(with: handler)
@@ -49,6 +52,9 @@ internal struct Buffer {
             streamHandler(self.streams.filter{ $0.priority == .low })(configuration[.low] ?? self.defaultBufferConfig)
     }
     
+    /// This func a generic takes a handler and a stream and subscribe to it
+    /// - Parameter handler: Need to pass a callback that will be called when a data is pushed out of a priority stream
+    /// - Parameter configuration: This helps to set the config for priority stream
     private func setStream (with handler: @escaping ((_ data: [EventDataType]) -> ()))
         -> (_ stream: Observable<(event: String, payload: [String : Any]?, priority: NAAnalyticsEventPriority)>)
         -> (_ config: (interval: Int, count: Int))
