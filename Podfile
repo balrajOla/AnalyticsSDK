@@ -10,6 +10,7 @@ project 'AnalyticsSDK/AnalyticsSDK.xcodeproj'
 def mainApp_pod
   pod 'RxSwift'
   pod 'Mixpanel-swift'
+  pod 'ReachabilitySwift'
 end
 
 target 'AnalyticsSDK' do

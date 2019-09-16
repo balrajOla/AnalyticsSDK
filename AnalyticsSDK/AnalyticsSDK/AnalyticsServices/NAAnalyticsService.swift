@@ -31,19 +31,21 @@ struct NAAnalyticsService: TrackerService {
     //MARK: - Constructor
     init() {
         self.analyticsService.configure(handler: { (events, callback) in
-            print("\n \n ------Noon Academy Analytics events are been looged------")
-            print("\n ------START------")
-            _ = events.map { event -> Void in
-                if let properties = event.payload {
-                    print("\n Date: \(Date()), Track event \"\(event.event)\" with properties \"\(properties.debugDescription)\"")
-                } else {
-                    print("\n Date: \(Date()), Track event \"\(event.event)\" without properties")
+            DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+                print("\n \n ------Noon Academy Analytics events are been looged------")
+                print("\n ------START------")
+                _ = events.map { event -> Void in
+                    if let properties = event.payload {
+                        print("\n Date: \(Date()), Track event \"\(event.event)\" with properties \"\(properties.debugDescription)\"")
+                    } else {
+                        print("\n Date: \(Date()), Track event \"\(event.event)\" without properties")
+                    }
                 }
+                print("\n------END------")
+                
+                // This is an callback to analytics framework to inform is Data is uploaded or not
+                callback(Result<Single, Error>.success(Single.value))
             }
-            print("\n------END------")
-            
-            // This is an callback to analytics framework to inform is Data is uploaded or not
-            callback(Result<Single, Error>.success(Single.value))
         })(configuration)
     }
     

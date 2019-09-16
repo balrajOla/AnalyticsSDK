@@ -16,8 +16,10 @@ public class NoonAcademyAnalytics {
     //MARK: - Private Variables
     fileprivate var callbackHandler: ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (Result<Single, Error>) -> ()) -> ())?
     fileprivate var token = UUID().uuidString
+    fileprivate let queueObjectToken = UUID().uuidString
     fileprivate var startedDate: Date = Date()
     fileprivate var bufferStream: Buffer?
+    fileprivate var queueStream: NAQueue?
     
     //MARK: - Private Constructor
     private init() {}
@@ -37,6 +39,10 @@ public class NoonAcademyAnalytics {
                     
                     self.start(withConfiguration: configuration)
                 }
+                
+                DispatchQueue.once(token: self.queueObjectToken) {
+                    self.queueStream = NAQueue(withHandler: handler)
+                }
             }
     }
     
@@ -55,11 +61,9 @@ public class NoonAcademyAnalytics {
                 return
             }
             
-            //TODO:- Push to this data to the queue and then callback handler will be called here
+            // Push to this data to the queue and then callback handler will be called here
+            self.queueStream?.push(forData: event.map({ (event: $0.event, payload: $0.payload) }))
             
-            self.callbackHandler?(event.map({ (event: $0.event, payload: $0.payload) })) { _ in
-                // TODO: Call Queue system to delete the data if success or inform queue to retry
-            }
         }, configuration)
     }
     

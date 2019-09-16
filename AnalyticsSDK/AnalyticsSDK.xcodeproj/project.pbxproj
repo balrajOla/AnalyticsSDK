@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		382EB65AEF9C1DE3BA528500 /* Pods_AnalyticsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA980C314B15DED9B08A5EF /* Pods_AnalyticsSDK.framework */; };
+		A2206958232F99450037482C /* NAQueueTaskCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2206957232F99450037482C /* NAQueueTaskCreator.swift */; };
+		A220695A232F9A5F0037482C /* NAAnalyticsTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2206959232F9A5F0037482C /* NAAnalyticsTask.swift */; };
 		A268065A2324DEB600645FF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806592324DEB600645FF4 /* AppDelegate.swift */; };
 		A268065C2324DEB600645FF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268065B2324DEB600645FF4 /* SceneDelegate.swift */; };
 		A268065E2324DEB600645FF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268065D2324DEB600645FF4 /* ViewController.swift */; };
@@ -23,7 +25,7 @@
 		A2680706232AAE9A00645FF4 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806F0232AAE9A00645FF4 /* Tracker.swift */; };
 		A2680707232AAE9A00645FF4 /* NAAnalyticsEventPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806F3232AAE9A00645FF4 /* NAAnalyticsEventPriority.swift */; };
 		A2680708232AAE9A00645FF4 /* NoonAcademyAnalyticsCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806F4232AAE9A00645FF4 /* NoonAcademyAnalyticsCore.swift */; };
-		A2680709232AAE9A00645FF4 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806F6232AAE9A00645FF4 /* Queue.swift */; };
+		A2680709232AAE9A00645FF4 /* NAQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806F6232AAE9A00645FF4 /* NAQueue.swift */; };
 		A268070A232AAE9A00645FF4 /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806F8232AAE9A00645FF4 /* Buffer.swift */; };
 		A268070B232AAE9A00645FF4 /* TrackerUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806FB232AAE9A00645FF4 /* TrackerUserProfile.swift */; };
 		A268070C232AAE9A00645FF4 /* TrackerEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806FC232AAE9A00645FF4 /* TrackerEvent.swift */; };
@@ -31,6 +33,25 @@
 		A268070E232AAE9A00645FF4 /* TrackEventServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26806FF232AAE9A00645FF4 /* TrackEventServiceProtocols.swift */; };
 		A268070F232AAE9A00645FF4 /* TrackerServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680700232AAE9A00645FF4 /* TrackerServiceProtocol.swift */; };
 		A2680710232AAE9A00645FF4 /* TrackerDebugService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680702232AAE9A00645FF4 /* TrackerDebugService.swift */; };
+		A2680751232F600600645FF4 /* UserDefaultsPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268073D232F600600645FF4 /* UserDefaultsPersister.swift */; };
+		A2680752232F600600645FF4 /* SwiftOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268073E232F600600645FF4 /* SwiftOperation.swift */; };
+		A2680753232F600600645FF4 /* JobInfoSerializer+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268073F232F600600645FF4 /* JobInfoSerializer+Decodable.swift */; };
+		A2680754232F600600645FF4 /* SwiftOperationTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680740232F600600645FF4 /* SwiftOperationTask.swift */; };
+		A2680755232F600600645FF4 /* JobInfoSerializer+V1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680741232F600600645FF4 /* JobInfoSerializer+V1.swift */; };
+		A2680756232F600600645FF4 /* JobBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680742232F600600645FF4 /* JobBuilder.swift */; };
+		A2680757232F600600645FF4 /* JobInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680743232F600600645FF4 /* JobInfo.swift */; };
+		A2680758232F600600645FF4 /* Constraint+Charging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680744232F600600645FF4 /* Constraint+Charging.swift */; };
+		A2680759232F600600645FF4 /* Constraint+Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680745232F600600645FF4 /* Constraint+Timeout.swift */; };
+		A268075A232F600600645FF4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680746232F600600645FF4 /* Utils.swift */; };
+		A268075B232F600600645FF4 /* SwiftTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680747232F600600645FF4 /* SwiftTask.swift */; };
+		A268075C232F600600645FF4 /* Constraint+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680748232F600600645FF4 /* Constraint+Network.swift */; };
+		A268075D232F600600645FF4 /* Constraint+Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680749232F600600645FF4 /* Constraint+Delay.swift */; };
+		A268075E232F600600645FF4 /* Constraint+Deadline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268074A232F600600645FF4 /* Constraint+Deadline.swift */; };
+		A268075F232F600600645FF4 /* Constraint+Executor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268074B232F600600645FF4 /* Constraint+Executor.swift */; };
+		A2680760232F600600645FF4 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268074C232F600600645FF4 /* Constraint.swift */; };
+		A2680761232F600600645FF4 /* SwiftTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268074D232F600600645FF4 /* SwiftTaskManager.swift */; };
+		A2680762232F600600645FF4 /* Constraint+UniqueUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268074E232F600600645FF4 /* Constraint+UniqueUUID.swift */; };
+		A2680763232F600600645FF4 /* SwiftTaskManager+BackgroundTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680750232F600600645FF4 /* SwiftTaskManager+BackgroundTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +70,8 @@
 /* Begin PBXFileReference section */
 		2BCF95F7A3B91BA7BAEA826B /* Pods-AnalyticsSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsSDK.debug.xcconfig"; path = "Target Support Files/Pods-AnalyticsSDK/Pods-AnalyticsSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		5A17E89B4130A8DFEC9A652C /* Pods-AnalyticsSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnalyticsSDK.release.xcconfig"; path = "Target Support Files/Pods-AnalyticsSDK/Pods-AnalyticsSDK.release.xcconfig"; sourceTree = "<group>"; };
+		A2206957232F99450037482C /* NAQueueTaskCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NAQueueTaskCreator.swift; sourceTree = "<group>"; };
+		A2206959232F9A5F0037482C /* NAAnalyticsTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NAAnalyticsTask.swift; sourceTree = "<group>"; };
 		A26806562324DEB600645FF4 /* AnalyticsSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnalyticsSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A26806592324DEB600645FF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A268065B2324DEB600645FF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +92,7 @@
 		A26806F0232AAE9A00645FF4 /* Tracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
 		A26806F3232AAE9A00645FF4 /* NAAnalyticsEventPriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NAAnalyticsEventPriority.swift; sourceTree = "<group>"; };
 		A26806F4232AAE9A00645FF4 /* NoonAcademyAnalyticsCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonAcademyAnalyticsCore.swift; sourceTree = "<group>"; };
-		A26806F6232AAE9A00645FF4 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		A26806F6232AAE9A00645FF4 /* NAQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NAQueue.swift; sourceTree = "<group>"; };
 		A26806F8232AAE9A00645FF4 /* Buffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buffer.swift; sourceTree = "<group>"; };
 		A26806FB232AAE9A00645FF4 /* TrackerUserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerUserProfile.swift; sourceTree = "<group>"; };
 		A26806FC232AAE9A00645FF4 /* TrackerEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerEvent.swift; sourceTree = "<group>"; };
@@ -77,6 +100,25 @@
 		A26806FF232AAE9A00645FF4 /* TrackEventServiceProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackEventServiceProtocols.swift; sourceTree = "<group>"; };
 		A2680700232AAE9A00645FF4 /* TrackerServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerServiceProtocol.swift; sourceTree = "<group>"; };
 		A2680702232AAE9A00645FF4 /* TrackerDebugService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerDebugService.swift; sourceTree = "<group>"; };
+		A268073D232F600600645FF4 /* UserDefaultsPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersister.swift; sourceTree = "<group>"; };
+		A268073E232F600600645FF4 /* SwiftOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftOperation.swift; sourceTree = "<group>"; };
+		A268073F232F600600645FF4 /* JobInfoSerializer+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JobInfoSerializer+Decodable.swift"; sourceTree = "<group>"; };
+		A2680740232F600600645FF4 /* SwiftOperationTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftOperationTask.swift; sourceTree = "<group>"; };
+		A2680741232F600600645FF4 /* JobInfoSerializer+V1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JobInfoSerializer+V1.swift"; sourceTree = "<group>"; };
+		A2680742232F600600645FF4 /* JobBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobBuilder.swift; sourceTree = "<group>"; };
+		A2680743232F600600645FF4 /* JobInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobInfo.swift; sourceTree = "<group>"; };
+		A2680744232F600600645FF4 /* Constraint+Charging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraint+Charging.swift"; sourceTree = "<group>"; };
+		A2680745232F600600645FF4 /* Constraint+Timeout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraint+Timeout.swift"; sourceTree = "<group>"; };
+		A2680746232F600600645FF4 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		A2680747232F600600645FF4 /* SwiftTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTask.swift; sourceTree = "<group>"; };
+		A2680748232F600600645FF4 /* Constraint+Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraint+Network.swift"; sourceTree = "<group>"; };
+		A2680749232F600600645FF4 /* Constraint+Delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraint+Delay.swift"; sourceTree = "<group>"; };
+		A268074A232F600600645FF4 /* Constraint+Deadline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraint+Deadline.swift"; sourceTree = "<group>"; };
+		A268074B232F600600645FF4 /* Constraint+Executor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraint+Executor.swift"; sourceTree = "<group>"; };
+		A268074C232F600600645FF4 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		A268074D232F600600645FF4 /* SwiftTaskManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTaskManager.swift; sourceTree = "<group>"; };
+		A268074E232F600600645FF4 /* Constraint+UniqueUUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraint+UniqueUUID.swift"; sourceTree = "<group>"; };
+		A2680750232F600600645FF4 /* SwiftTaskManager+BackgroundTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftTaskManager+BackgroundTask.swift"; sourceTree = "<group>"; };
 		EAA980C314B15DED9B08A5EF /* Pods_AnalyticsSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnalyticsSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -100,6 +142,15 @@
 			);
 			name = Pods;
 			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		A2206956232F992C0037482C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A2206957232F99450037482C /* NAQueueTaskCreator.swift */,
+				A2206959232F9A5F0037482C /* NAAnalyticsTask.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A268064D2324DEB600645FF4 = {
@@ -208,7 +259,9 @@
 		A26806F5232AAE9A00645FF4 /* Queue */ = {
 			isa = PBXGroup;
 			children = (
-				A26806F6232AAE9A00645FF4 /* Queue.swift */,
+				A2206956232F992C0037482C /* Services */,
+				A2680711232F5E1900645FF4 /* Core */,
+				A26806F6232AAE9A00645FF4 /* NAQueue.swift */,
 			);
 			path = Queue;
 			sourceTree = "<group>";
@@ -256,6 +309,48 @@
 				A2680702232AAE9A00645FF4 /* TrackerDebugService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A2680711232F5E1900645FF4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A268074F232F600600645FF4 /* ios */,
+				A268073C232F600600645FF4 /* SwiftTask */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A268073C232F600600645FF4 /* SwiftTask */ = {
+			isa = PBXGroup;
+			children = (
+				A268073D232F600600645FF4 /* UserDefaultsPersister.swift */,
+				A268073E232F600600645FF4 /* SwiftOperation.swift */,
+				A268073F232F600600645FF4 /* JobInfoSerializer+Decodable.swift */,
+				A2680740232F600600645FF4 /* SwiftOperationTask.swift */,
+				A2680741232F600600645FF4 /* JobInfoSerializer+V1.swift */,
+				A2680742232F600600645FF4 /* JobBuilder.swift */,
+				A2680743232F600600645FF4 /* JobInfo.swift */,
+				A2680744232F600600645FF4 /* Constraint+Charging.swift */,
+				A2680745232F600600645FF4 /* Constraint+Timeout.swift */,
+				A2680746232F600600645FF4 /* Utils.swift */,
+				A2680747232F600600645FF4 /* SwiftTask.swift */,
+				A2680748232F600600645FF4 /* Constraint+Network.swift */,
+				A2680749232F600600645FF4 /* Constraint+Delay.swift */,
+				A268074A232F600600645FF4 /* Constraint+Deadline.swift */,
+				A268074B232F600600645FF4 /* Constraint+Executor.swift */,
+				A268074C232F600600645FF4 /* Constraint.swift */,
+				A268074D232F600600645FF4 /* SwiftTaskManager.swift */,
+				A268074E232F600600645FF4 /* Constraint+UniqueUUID.swift */,
+			);
+			path = SwiftTask;
+			sourceTree = "<group>";
+		};
+		A268074F232F600600645FF4 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				A2680750232F600600645FF4 /* SwiftTaskManager+BackgroundTask.swift */,
+			);
+			path = ios;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,26 +469,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2680760232F600600645FF4 /* Constraint.swift in Sources */,
 				A268065E2324DEB600645FF4 /* ViewController.swift in Sources */,
+				A2680755232F600600645FF4 /* JobInfoSerializer+V1.swift in Sources */,
 				A2680704232AAE9A00645FF4 /* Encode+Dictionary.swift in Sources */,
+				A2680762232F600600645FF4 /* Constraint+UniqueUUID.swift in Sources */,
+				A2680759232F600600645FF4 /* Constraint+Timeout.swift in Sources */,
 				A2680706232AAE9A00645FF4 /* Tracker.swift in Sources */,
+				A2680761232F600600645FF4 /* SwiftTaskManager.swift in Sources */,
+				A268075A232F600600645FF4 /* Utils.swift in Sources */,
 				A268065A2324DEB600645FF4 /* AppDelegate.swift in Sources */,
-				A2680709232AAE9A00645FF4 /* Queue.swift in Sources */,
+				A2680757232F600600645FF4 /* JobInfo.swift in Sources */,
+				A2680754232F600600645FF4 /* SwiftOperationTask.swift in Sources */,
+				A2680709232AAE9A00645FF4 /* NAQueue.swift in Sources */,
+				A2680751232F600600645FF4 /* UserDefaultsPersister.swift in Sources */,
 				A268065C2324DEB600645FF4 /* SceneDelegate.swift in Sources */,
 				A2680705232AAE9A00645FF4 /* ResultType.swift in Sources */,
+				A268075C232F600600645FF4 /* Constraint+Network.swift in Sources */,
 				A2680703232AAE9A00645FF4 /* DispatchQueue+Once.swift in Sources */,
+				A2680756232F600600645FF4 /* JobBuilder.swift in Sources */,
 				A26806B02326D16A00645FF4 /* MixpanelService.swift in Sources */,
+				A268075D232F600600645FF4 /* Constraint+Delay.swift in Sources */,
 				A268070A232AAE9A00645FF4 /* Buffer.swift in Sources */,
+				A2680763232F600600645FF4 /* SwiftTaskManager+BackgroundTask.swift in Sources */,
 				A2680708232AAE9A00645FF4 /* NoonAcademyAnalyticsCore.swift in Sources */,
+				A268075F232F600600645FF4 /* Constraint+Executor.swift in Sources */,
+				A220695A232F9A5F0037482C /* NAAnalyticsTask.swift in Sources */,
 				A268070C232AAE9A00645FF4 /* TrackerEvent.swift in Sources */,
 				A2680710232AAE9A00645FF4 /* TrackerDebugService.swift in Sources */,
 				A2680707232AAE9A00645FF4 /* NAAnalyticsEventPriority.swift in Sources */,
+				A2206958232F99450037482C /* NAQueueTaskCreator.swift in Sources */,
 				A26806AD2326CD2500645FF4 /* AnalyticsTrackerConstants.swift in Sources */,
+				A268075E232F600600645FF4 /* Constraint+Deadline.swift in Sources */,
 				A268070F232AAE9A00645FF4 /* TrackerServiceProtocol.swift in Sources */,
 				A268070D232AAE9A00645FF4 /* EventPriority.swift in Sources */,
+				A2680753232F600600645FF4 /* JobInfoSerializer+Decodable.swift in Sources */,
+				A2680758232F600600645FF4 /* Constraint+Charging.swift in Sources */,
 				A268070B232AAE9A00645FF4 /* TrackerUserProfile.swift in Sources */,
+				A268075B232F600600645FF4 /* SwiftTask.swift in Sources */,
 				A268070E232AAE9A00645FF4 /* TrackEventServiceProtocols.swift in Sources */,
 				A26806BF232A638000645FF4 /* NAAnalyticsService.swift in Sources */,
+				A2680752232F600600645FF4 /* SwiftOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

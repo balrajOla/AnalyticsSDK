@@ -1,0 +1,31 @@
+//
+//  NAQueueTaskCreator.swift
+//  AnalyticsSDK
+//
+//  Created by Balraj Singh on 16/09/19.
+//  Copyright © 2019 Balraj Singh. All rights reserved.
+//
+
+import Foundation
+
+struct NAQueueTaskCreator: TaskCreator {
+    //MARK: - Private Variable
+    fileprivate let callbackHandler: ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (Result<Single, Error>) -> ()) -> ())
+    fileprivate let retryPolicy: RetryConstraint
+    
+    init(withHandler handler: @escaping ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (Result<Single, Error>) -> ()) -> ()), retryPolicy: RetryConstraint) {
+        self.callbackHandler = handler
+        self.retryPolicy = retryPolicy
+    }
+    
+    /// method called when a task has be to instantiate
+    /// Type as specified in TaskBuilder.init(type) and params as TaskBuilder.with(params)
+    func create(type: String, params: [String: Any]?) -> Task {
+        guard let paramValue = params?["eventData"] as? [(event: String, payload: [String : Any]?)] else {
+            return DummyTask()
+        }
+        
+        // Return our actual job.
+        return NAAnalyticsTask(withHandler: callbackHandler, retryPolicy: retryPolicy, eventData: paramValue)
+    }
+}

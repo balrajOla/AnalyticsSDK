@@ -2,21 +2,25 @@ PODS:
   - Mixpanel-swift (2.6.5):
     - Mixpanel-swift/Complete (= 2.6.5)
   - Mixpanel-swift/Complete (2.6.5)
+  - ReachabilitySwift (4.3.1)
   - RxSwift (5.0.0)
 
 DEPENDENCIES:
   - Mixpanel-swift
+  - ReachabilitySwift
   - RxSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Mixpanel-swift
+    - ReachabilitySwift
     - RxSwift
 
 SPEC CHECKSUMS:
   Mixpanel-swift: 1542908cda2c3858027e1d38f31f34fb6b16f4fc
+  ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
 
-PODFILE CHECKSUM: 6dda0a9440f0f8032e5f1a6983d30d7b26d7227b
+PODFILE CHECKSUM: d97098327f81306cff8d2fa232a7cb5d9e9f30c3
 
 COCOAPODS: 1.7.0
