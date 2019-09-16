@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonClicked(_ sender: Any) {
-        TrackerEventConstants.trackLaunchScreenButtonClicked(nil)
+        TrackerEventConstants.trackLaunchScreenButtonClicked(ButtonClick())
     }
 }
 

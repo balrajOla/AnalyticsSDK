@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct ButtonClick: Codable {
+    let name = "CLick Here Button"
+}
+
 struct TrackerEventConstants {
     public static let trackApplicationLaunch = Tracker.sharedInsatance.track(withServices: [NAAnalyticsServiceConstants.serviceName])(TrackerEvent<Single>(name: "ApplicationFinishLaunching", priority: .high))
     
@@ -15,5 +19,5 @@ struct TrackerEventConstants {
     
     public static let trackLaunchScreenViewWillAppear = Tracker.sharedInsatance.track(withServices: [NAAnalyticsServiceConstants.serviceName])(TrackerEvent<Single>(name: "LaunchScreenViewWillAppear", priority: .medium))
     
-    public static let trackLaunchScreenButtonClicked = Tracker.sharedInsatance.track(withServices: [NAAnalyticsServiceConstants.serviceName])(TrackerEvent<Single>(name: "LaunchScreenButtonClicked", priority: .medium))
+    public static let trackLaunchScreenButtonClicked = Tracker.sharedInsatance.track(withServices: [NAAnalyticsServiceConstants.serviceName])(TrackerEvent<ButtonClick>(name: "LaunchScreenButtonClicked", priority: .medium))
 }
