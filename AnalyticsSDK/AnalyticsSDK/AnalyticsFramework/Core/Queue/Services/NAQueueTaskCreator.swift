@@ -21,11 +21,17 @@ struct NAQueueTaskCreator: TaskCreator {
     /// method called when a task has be to instantiate
     /// Type as specified in TaskBuilder.init(type) and params as TaskBuilder.with(params)
     func create(type: String, params: [String: Any]?) -> Task {
-        guard let paramValue = params?["eventData"] as? [(event: String, payload: [String : Any]?)] else {
+        guard let paramValue = params?["eventData"] as? [[String: Any]] else {
             return DummyTask()
         }
         
+        let mappedDataValue = paramValue.compactMap { NAQueueEventData.toObj(json: $0) }
+        
+        let mappedData = mappedDataValue.map({ value -> (event: String, payload: [String: Any]?) in
+            return (event: value.event, payload: value.data)
+        })
+        
         // Return our actual job.
-        return NAAnalyticsTask(withHandler: callbackHandler, retryPolicy: retryPolicy, eventData: paramValue)
+        return NAAnalyticsTask(withHandler: callbackHandler, retryPolicy: retryPolicy, eventData: mappedData)
     }
 }
