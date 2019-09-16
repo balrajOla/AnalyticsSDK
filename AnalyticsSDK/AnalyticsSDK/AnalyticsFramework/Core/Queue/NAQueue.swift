@@ -53,7 +53,8 @@ internal struct NAQueue {
     func push(forData data: [(event: String, payload: [String: Any]?)]) {
         let mappedData = data.map({ value -> NAQueueEventData in NAQueueEventData(event: value.event, data: value.payload) })
         
-        taskBuilder.with(params: ["eventData": mappedData.map {$0.toJSON()}])
+        taskBuilder.singleInstance(forId: UUID().uuidString)
+                   .with(params: ["eventData": mappedData.map {$0.toJSON()}])
                    .schedule(manager: self.taskManager)
     }
 }
