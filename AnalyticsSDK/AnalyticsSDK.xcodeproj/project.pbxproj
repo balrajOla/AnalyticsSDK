@@ -314,7 +314,7 @@
 		A2680711232F5E1900645FF4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				A268074F232F600600645FF4 /* ios */,
+				A268074F232F600600645FF4 /* BackgroundTask */,
 				A268073C232F600600645FF4 /* SwiftTask */,
 			);
 			path = Core;
@@ -345,12 +345,12 @@
 			path = SwiftTask;
 			sourceTree = "<group>";
 		};
-		A268074F232F600600645FF4 /* ios */ = {
+		A268074F232F600600645FF4 /* BackgroundTask */ = {
 			isa = PBXGroup;
 			children = (
 				A2680750232F600600645FF4 /* SwiftTaskManager+BackgroundTask.swift */,
 			);
-			path = ios;
+			path = BackgroundTask;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
