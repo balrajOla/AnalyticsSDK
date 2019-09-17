@@ -35,11 +35,11 @@
 		A2680710232AAE9A00645FF4 /* TrackerDebugService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680702232AAE9A00645FF4 /* TrackerDebugService.swift */; };
 		A2680751232F600600645FF4 /* UserDefaultsPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268073D232F600600645FF4 /* UserDefaultsPersister.swift */; };
 		A2680752232F600600645FF4 /* SwiftOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268073E232F600600645FF4 /* SwiftOperation.swift */; };
-		A2680753232F600600645FF4 /* JobInfoSerializer+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268073F232F600600645FF4 /* JobInfoSerializer+Decodable.swift */; };
+		A2680753232F600600645FF4 /* TaskInfoSerializer+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268073F232F600600645FF4 /* TaskInfoSerializer+Decodable.swift */; };
 		A2680754232F600600645FF4 /* SwiftOperationTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680740232F600600645FF4 /* SwiftOperationTask.swift */; };
-		A2680755232F600600645FF4 /* JobInfoSerializer+V1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680741232F600600645FF4 /* JobInfoSerializer+V1.swift */; };
-		A2680756232F600600645FF4 /* JobBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680742232F600600645FF4 /* JobBuilder.swift */; };
-		A2680757232F600600645FF4 /* JobInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680743232F600600645FF4 /* JobInfo.swift */; };
+		A2680755232F600600645FF4 /* TaskInfoSerializer+V1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680741232F600600645FF4 /* TaskInfoSerializer+V1.swift */; };
+		A2680756232F600600645FF4 /* TaskBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680742232F600600645FF4 /* TaskBuilder.swift */; };
+		A2680757232F600600645FF4 /* TaskInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680743232F600600645FF4 /* TaskInfo.swift */; };
 		A2680758232F600600645FF4 /* Constraint+Charging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680744232F600600645FF4 /* Constraint+Charging.swift */; };
 		A2680759232F600600645FF4 /* Constraint+Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680745232F600600645FF4 /* Constraint+Timeout.swift */; };
 		A268075A232F600600645FF4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2680746232F600600645FF4 /* Utils.swift */; };
@@ -102,11 +102,11 @@
 		A2680702232AAE9A00645FF4 /* TrackerDebugService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerDebugService.swift; sourceTree = "<group>"; };
 		A268073D232F600600645FF4 /* UserDefaultsPersister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersister.swift; sourceTree = "<group>"; };
 		A268073E232F600600645FF4 /* SwiftOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftOperation.swift; sourceTree = "<group>"; };
-		A268073F232F600600645FF4 /* JobInfoSerializer+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JobInfoSerializer+Decodable.swift"; sourceTree = "<group>"; };
+		A268073F232F600600645FF4 /* TaskInfoSerializer+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TaskInfoSerializer+Decodable.swift"; sourceTree = "<group>"; };
 		A2680740232F600600645FF4 /* SwiftOperationTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftOperationTask.swift; sourceTree = "<group>"; };
-		A2680741232F600600645FF4 /* JobInfoSerializer+V1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JobInfoSerializer+V1.swift"; sourceTree = "<group>"; };
-		A2680742232F600600645FF4 /* JobBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobBuilder.swift; sourceTree = "<group>"; };
-		A2680743232F600600645FF4 /* JobInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobInfo.swift; sourceTree = "<group>"; };
+		A2680741232F600600645FF4 /* TaskInfoSerializer+V1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TaskInfoSerializer+V1.swift"; sourceTree = "<group>"; };
+		A2680742232F600600645FF4 /* TaskBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskBuilder.swift; sourceTree = "<group>"; };
+		A2680743232F600600645FF4 /* TaskInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskInfo.swift; sourceTree = "<group>"; };
 		A2680744232F600600645FF4 /* Constraint+Charging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraint+Charging.swift"; sourceTree = "<group>"; };
 		A2680745232F600600645FF4 /* Constraint+Timeout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraint+Timeout.swift"; sourceTree = "<group>"; };
 		A2680746232F600600645FF4 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -325,11 +325,11 @@
 			children = (
 				A268073D232F600600645FF4 /* UserDefaultsPersister.swift */,
 				A268073E232F600600645FF4 /* SwiftOperation.swift */,
-				A268073F232F600600645FF4 /* JobInfoSerializer+Decodable.swift */,
+				A268073F232F600600645FF4 /* TaskInfoSerializer+Decodable.swift */,
 				A2680740232F600600645FF4 /* SwiftOperationTask.swift */,
-				A2680741232F600600645FF4 /* JobInfoSerializer+V1.swift */,
-				A2680742232F600600645FF4 /* JobBuilder.swift */,
-				A2680743232F600600645FF4 /* JobInfo.swift */,
+				A2680741232F600600645FF4 /* TaskInfoSerializer+V1.swift */,
+				A2680742232F600600645FF4 /* TaskBuilder.swift */,
+				A2680743232F600600645FF4 /* TaskInfo.swift */,
 				A2680744232F600600645FF4 /* Constraint+Charging.swift */,
 				A2680745232F600600645FF4 /* Constraint+Timeout.swift */,
 				A2680746232F600600645FF4 /* Utils.swift */,
@@ -471,7 +471,7 @@
 			files = (
 				A2680760232F600600645FF4 /* Constraint.swift in Sources */,
 				A268065E2324DEB600645FF4 /* ViewController.swift in Sources */,
-				A2680755232F600600645FF4 /* JobInfoSerializer+V1.swift in Sources */,
+				A2680755232F600600645FF4 /* TaskInfoSerializer+V1.swift in Sources */,
 				A2680704232AAE9A00645FF4 /* Encode+Dictionary.swift in Sources */,
 				A2680762232F600600645FF4 /* Constraint+UniqueUUID.swift in Sources */,
 				A2680759232F600600645FF4 /* Constraint+Timeout.swift in Sources */,
@@ -479,7 +479,7 @@
 				A2680761232F600600645FF4 /* SwiftTaskManager.swift in Sources */,
 				A268075A232F600600645FF4 /* Utils.swift in Sources */,
 				A268065A2324DEB600645FF4 /* AppDelegate.swift in Sources */,
-				A2680757232F600600645FF4 /* JobInfo.swift in Sources */,
+				A2680757232F600600645FF4 /* TaskInfo.swift in Sources */,
 				A2680754232F600600645FF4 /* SwiftOperationTask.swift in Sources */,
 				A2680709232AAE9A00645FF4 /* NAQueue.swift in Sources */,
 				A2680751232F600600645FF4 /* UserDefaultsPersister.swift in Sources */,
@@ -487,7 +487,7 @@
 				A2680705232AAE9A00645FF4 /* ResultType.swift in Sources */,
 				A268075C232F600600645FF4 /* Constraint+Network.swift in Sources */,
 				A2680703232AAE9A00645FF4 /* DispatchQueue+Once.swift in Sources */,
-				A2680756232F600600645FF4 /* JobBuilder.swift in Sources */,
+				A2680756232F600600645FF4 /* TaskBuilder.swift in Sources */,
 				A26806B02326D16A00645FF4 /* MixpanelService.swift in Sources */,
 				A268075D232F600600645FF4 /* Constraint+Delay.swift in Sources */,
 				A268070A232AAE9A00645FF4 /* Buffer.swift in Sources */,
@@ -503,7 +503,7 @@
 				A268075E232F600600645FF4 /* Constraint+Deadline.swift in Sources */,
 				A268070F232AAE9A00645FF4 /* TrackerServiceProtocol.swift in Sources */,
 				A268070D232AAE9A00645FF4 /* EventPriority.swift in Sources */,
-				A2680753232F600600645FF4 /* JobInfoSerializer+Decodable.swift in Sources */,
+				A2680753232F600600645FF4 /* TaskInfoSerializer+Decodable.swift in Sources */,
 				A2680758232F600600645FF4 /* Constraint+Charging.swift in Sources */,
 				A268070B232AAE9A00645FF4 /* TrackerUserProfile.swift in Sources */,
 				A268075B232F600600645FF4 /* SwiftTask.swift in Sources */,
