@@ -27,22 +27,14 @@ public class NoonAcademyAnalytics {
     //MARK: - Configuration
     /// This function sets the callback handler and calls `func start()`
     public func configure(handler: @escaping ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (Result<Single, Error>) -> ()) -> ()))
-        -> (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)])
         -> Void {
-            return {[weak self] (_ configuration: [NAAnalyticsEventPriority: (interval: Int, count: Int)]) -> Void in
-                guard let self = self else {
-                    return
-                }
-                
-                DispatchQueue.once(token: self.token) {
-                    self.callbackHandler = handler
-                    
-                    self.start(withConfiguration: configuration)
-                }
-                
-                DispatchQueue.once(token: self.queueObjectToken) {
-                    self.queueStream = NAQueue(withHandler: handler)
-                }
+            
+            DispatchQueue.once(token: self.token) {
+                self.callbackHandler = handler
+            }
+            
+            DispatchQueue.once(token: self.queueObjectToken) {
+                self.queueStream = NAQueue(withHandler: handler)
             }
     }
     
@@ -64,7 +56,7 @@ public class NoonAcademyAnalytics {
             // Push to this data to the queue and then callback handler will be called here
             self.queueStream?.push(forData: event.map({ (event: $0.event, payload: $0.payload) }))
             
-        }, configuration)
+            }, configuration)
     }
     
     /// This function tracks the analytics events sent via application

@@ -21,3 +21,4 @@ struct TrackerEventConstants {
     
     public static let trackLaunchScreenButtonClicked = Tracker.sharedInsatance.track(withServices: [NAAnalyticsServiceConstants.serviceName])(TrackerEvent<ButtonClick>(name: "LaunchScreenButtonClicked", priority: .medium))
 }
+ 

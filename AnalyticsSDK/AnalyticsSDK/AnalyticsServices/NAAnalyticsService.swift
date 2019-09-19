@@ -46,7 +46,7 @@ struct NAAnalyticsService: TrackerService {
                 // This is an callback to analytics framework to inform is Data is uploaded or not
                 callback(Result<Single, Error>.success(Single.value))
             }
-        })(configuration)
+        })
     }
     
     //MARK: - Implemented lifecycle functions
