@@ -14,6 +14,8 @@ public class NoonAcademyAnalytics {
     public static let sharedInstance = NoonAcademyAnalytics()
     
     //MARK: - Private Variables
+    // This callback handler is called with grouped event data to perform some Async task
+    // The result of this async task is then passed back in the respose parameter of the callback handler
     fileprivate var callbackHandler: ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (ResultT<Single, Error>) -> ()) -> ())?
     fileprivate var token = UUID().uuidString
     fileprivate let queueObjectToken = UUID().uuidString
@@ -74,7 +76,5 @@ public class NoonAcademyAnalytics {
         
         //Close the running buffer
         self.bufferStream?.close()
-        
-        //TODO:- Complete the Queue
     }
 }
