@@ -46,7 +46,7 @@ internal struct NAQueue {
                                   .service(quality: .background)
     
     init(withHandler handler: @escaping ((_ data: [(event: String, payload: [String: Any]?)],
-        _ response: @escaping (Result<Single, Error>) -> ()) -> ())) {
+        _ response: @escaping (ResultT<Single, Error>) -> ()) -> ())) {
         self.taskManager = SwiftTaskManagerBuilder(creator: NAQueueTaskCreator(withHandler: handler, retryPolicy: retryPolicy), maxConcurrencyLimit: maxConcurrentLimit).build()
     }
     

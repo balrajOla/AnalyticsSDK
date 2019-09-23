@@ -25,11 +25,11 @@ struct DummyTask: Task {
 
 class NAAnalyticsTask: Task {
     //MARK: - Private Variable
-    fileprivate let callbackHandler: ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (Result<Single, Error>) -> ()) -> ())
+    fileprivate let callbackHandler: ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (ResultT<Single, Error>) -> ()) -> ())
     fileprivate let retryPolicy: RetryConstraint
     fileprivate let eventData: [(event: String, payload: [String: Any]?)]
     
-    init(withHandler handler: @escaping ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (Result<Single, Error>) -> ()) -> ()), retryPolicy: RetryConstraint, eventData: [(event: String, payload: [String: Any]?)]) {
+    init(withHandler handler: @escaping ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (ResultT<Single, Error>) -> ()) -> ()), retryPolicy: RetryConstraint, eventData: [(event: String, payload: [String: Any]?)]) {
         self.callbackHandler = handler
         self.retryPolicy = retryPolicy
         self.eventData = eventData

@@ -14,7 +14,7 @@ public class NoonAcademyAnalytics {
     public static let sharedInstance = NoonAcademyAnalytics()
     
     //MARK: - Private Variables
-    fileprivate var callbackHandler: ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (Result<Single, Error>) -> ()) -> ())?
+    fileprivate var callbackHandler: ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (ResultT<Single, Error>) -> ()) -> ())?
     fileprivate var token = UUID().uuidString
     fileprivate let queueObjectToken = UUID().uuidString
     fileprivate var startedDate: Date = Date()
@@ -26,7 +26,7 @@ public class NoonAcademyAnalytics {
     
     //MARK: - Configuration
     /// This function sets the callback handler and calls `func start()`
-    public func configure(handler: @escaping ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (Result<Single, Error>) -> ()) -> ()))
+    public func configure(handler: @escaping ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (ResultT<Single, Error>) -> ()) -> ()))
         -> Void {
             
             DispatchQueue.once(token: self.token) {

@@ -44,7 +44,7 @@ struct NAAnalyticsService: TrackerService {
                 print("\n------END------")
                 
                 // This is an callback to analytics framework to inform is Data is uploaded or not
-                callback(Result<Single, Error>.success(Single.value))
+                callback(ResultT<Single, Error>.success(Single.value))
             }
         })
     }

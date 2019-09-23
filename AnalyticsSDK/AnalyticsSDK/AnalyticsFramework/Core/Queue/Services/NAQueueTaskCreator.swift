@@ -10,10 +10,10 @@ import Foundation
 
 struct NAQueueTaskCreator: TaskCreator {
     //MARK: - Private Variable
-    fileprivate let callbackHandler: ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (Result<Single, Error>) -> ()) -> ())
+    fileprivate let callbackHandler: ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (ResultT<Single, Error>) -> ()) -> ())
     fileprivate let retryPolicy: RetryConstraint
     
-    init(withHandler handler: @escaping ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (Result<Single, Error>) -> ()) -> ()), retryPolicy: RetryConstraint) {
+    init(withHandler handler: @escaping ((_ data: [(event: String, payload: [String: Any]?)], _ response: @escaping (ResultT<Single, Error>) -> ()) -> ()), retryPolicy: RetryConstraint) {
         self.callbackHandler = handler
         self.retryPolicy = retryPolicy
     }
